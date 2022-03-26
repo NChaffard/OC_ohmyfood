@@ -1,0 +1,22 @@
+
+// Import polices
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Shrikhand&display=swap');
+// Variables
+    // Couleurs
+    $primaire : #9356dc;
+    $secondaire: #ff79da;
+    $tertiaire: #99e2d0;
+
+// Mixins
+    // Polices
+    @mixin police-texte {
+        font-family: Roboto, sans-serif;
+    }
+    @mixin police-titre {
+        font-family: Shrikhand, sans-serif;
+    }
+
+*{
+    margin: 0;
+    @include police-texte();
+}
