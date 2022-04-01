@@ -1,5 +1,153 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Shrikhand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&family=Shrikhand&display=swap");
 * {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: Roboto, sans-serif;
+  font-size: 4.5vw;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1 {
+  font-family: Shrikhand, sans-serif;
+  font-weight: 200;
+}
+
+h2 {
+  font-size: 6vw;
+}
+
+.home {
+  height: 100vh;
+}
+
+.header {
+  height: 8vh;
+  display: flex;
+  justify-content: center;
+  padding-top: 2vh;
+  background-color: #f6f6f6;
+}
+.header__heading {
+  align-self: center;
+}
+
+.location {
+  height: 6vh;
+  background: #cecece;
+  background: linear-gradient(180deg, #cecece 0%, #eaeaea 15%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.location__place {
+  padding: 15px 0 15px 0;
+}
+.location__icon {
+  font-size: 4vw;
+}
+.location__location {
+  font-weight: bold;
+  font-size: 4vw;
+  padding-left: 10px;
+}
+
+.intro {
+  height: 36vh;
+  background-color: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 10%;
+  align-items: center;
+  text-align: center;
+}
+.intro__heading {
+  width: 70%;
+  padding-top: 10%;
+}
+.intro__text {
+  padding: 5%;
+}
+.intro__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 14vw;
+  width: 50%;
+  border: none;
+  border-radius: 7vw;
+  padding: 0 20px 0 20px;
+  background: #ff79da;
+  background: linear-gradient(172deg, #ff79da 0%, #9356dc 90%);
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+}
+.intro__link {
+  text-decoration: none;
+  color: white;
+  font-size: 3.5vw;
+}
+
+.description {
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-left: 5%;
+  margin-top: 5%;
+}
+.description__heading {
+  height: 15%;
+  display: flex;
+  align-items: center;
+}
+
+.description-list {
+  display: flex;
+  flex-direction: column;
+  height: 70%;
+  width: 90%;
+  align-self: center;
+  justify-content: space-around;
+}
+.description-list__lign {
+  display: flex;
+  height: 25%;
+  border-radius: 20px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+  background-color: #f6f6f6;
+}
+.description-list__lign--purple {
+  background-color: #e4d5f6;
+}
+.description-list__lign--purple i {
+  color: #9356dc;
+}
+.description-list__lign-number {
+  background-color: #9356dc;
+  color: white;
+  border-radius: 50%;
+  height: 6vw;
+  width: 6vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: -3vw;
+  font-size: 3vw;
+  font-weight: bold;
+}
+.description-list__lign-text {
+  font-weight: bold;
+}
+.description-list__icon {
+  position: absolute;
+  left: 10%;
 }/*# sourceMappingURL=style.css.map */

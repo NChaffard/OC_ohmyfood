@@ -1,22 +1,185 @@
 
 // Import polices
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Shrikhand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&family=Shrikhand&display=swap');
 // Variables
     // Couleurs
-    $primaire : #9356dc;
-    $secondaire: #ff79da;
-    $tertiaire: #99e2d0;
+        $primaire : #9356dc;
+        $secondaire: #ff79da;
+        $tertiaire: #99e2d0;
+    // background
+        $bg-grey: #f6f6f6;
+    //box-shadow
+        $shadow: 0px 5px 10px 0px rgba(0,0,0,0.2);
 
 // Mixins
     // Polices
-    @mixin police-texte {
-        font-family: Roboto, sans-serif;
-    }
-    @mixin police-titre {
-        font-family: Shrikhand, sans-serif;
-    }
+        @mixin police-texte {
+            font-family: Roboto, sans-serif;
+            font-size: 4.5vw;
+        }
+        @mixin police-titre-site {
+            font-family: Shrikhand, sans-serif;
+            font-weight: 200;
+        }
+    // Gradient
+        @mixin bg-location-gradient {
+            background: rgb(206,206,206);
+            background: linear-gradient(180deg, rgba(206,206,206,1) 0%, rgba(234,234,234,1) 15%); 
+        }
+        @mixin button-intro-gradient {
+            background: rgb(255,121,218);
+            background: linear-gradient(172deg, rgba(255,121,218,1) 0%, rgba(147,86,220,1) 90%);     }
 
 *{
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     @include police-texte();
 }
+html{
+    scroll-behavior: smooth;
+}
+h1{
+    @include police-titre-site();
+}
+h2{
+    font-size: 6vw;
+}
+
+// Mise en place hauteur home
+.home{
+    height: 100vh;
+}
+// header
+.header{
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    padding-top: 2vh;
+    background-color: $bg-grey;
+  
+    &__heading{
+        align-self: center;
+    }
+
+// location
+}
+.location{
+    height: 6vh;
+    @include bg-location-gradient();
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__place{
+        padding: 15px 0 15px 0;
+    }
+    &__icon{
+        font-size: 4vw;
+    }
+    &__location{
+        font-weight: bold;
+        font-size: 4vw;
+        padding-left: 10px;
+    }
+   
+}
+
+// intro
+.intro{
+    height: 36vh;
+    background-color: $bg-grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 10%;
+    align-items: center;
+    text-align: center;
+    &__heading{
+        width: 70%;
+        padding-top: 10%;
+    }
+    &__text{
+        padding: 5%;
+    }
+    &__button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 14vw;
+        width: 50%;
+        border: none;
+        border-radius: 7vw;
+        padding: 0 20px 0 20px;
+        @include button-intro-gradient;
+        box-shadow: $shadow;
+    }
+    &__link{
+        text-decoration: none;
+        color: white;
+        font-size: 3.5vw;
+    }
+    
+}
+
+// description
+.description{
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: 5%;
+    margin-top: 5%;
+    &__heading{
+        height: 15%;
+        display: flex;
+        align-items: center;
+    }
+}
+.description-list{
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+    width: 90%;
+    align-self: center;
+    justify-content: space-around;
+        &__lign{
+            display: flex;
+            height: 25%;
+            border-radius: 20px;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            box-shadow: $shadow;
+            background-color: #f6f6f6;
+            &--purple{
+                background-color: lighten($primaire,30%);
+                & i{
+                    color: $primaire;
+                }
+            }
+        }
+        &__lign-number{
+            background-color: $primaire;
+            color: white;
+            border-radius: 50%;
+            height: 6vw;
+            width: 6vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            left: -3vw;
+            font-size: 3vw;
+            font-weight: bold;
+        }
+        &__lign-text{
+            font-weight: bold;
+        }
+        &__icon{
+            position: absolute;
+            left: 10%;
+        }
+
+}  
+
