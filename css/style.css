@@ -161,6 +161,7 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100vw;
   height: 220vh;
   background-color: #f6f6f6;
 }
