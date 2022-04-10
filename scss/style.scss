@@ -13,11 +13,17 @@
 
 // Mixins
     // Polices
-        @mixin police-texte {
+        @mixin font($font-type: default) {
             font-family: Roboto, sans-serif;
-            font-size: 4.5vw;
+            @if $font-type == h2 {
+                font-size: clamp(22px, 6vw, 40px);
+            }
+            @if $font-type == default{
+                font-size: clamp(14px, 4vw, 30px);
+            }
         }
-        @mixin police-titre-site {
+        
+        @mixin brand-font {
             font-family: Shrikhand, sans-serif;
             font-weight: 200;
         }
@@ -40,22 +46,29 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    @include police-texte();
+}
+body{
+    @include font();
+
 }
 html{
     scroll-behavior: smooth;
 }
+
 h1{
-    @include police-titre-site();
+    @include brand-font();
 }
 h2{
-    font-size: 6vw;
+    @include font(h2);
+    margin: 0;
+    padding: 0;
 }
 ul{
     list-style: none;
 }
 a{
     text-decoration: none;
+    @include font();
 }
 
 // Mise en place hauteur home
@@ -85,30 +98,48 @@ a{
     &__place{
         padding: 15px 0 15px 0;
     }
-    &__icon{
-        font-size: 4vw;
-    }
+    
     &__location{
         font-weight: bold;
-        font-size: 4vw;
         padding-left: 10px;
     }
    
 }
-
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 12vw;
+    width: 50%;
+    border: none;
+    border-radius: 6vw;
+    box-shadow: $shadow;
+    color: white;
+    @include button-intro-gradient;
+      
+}
 // intro
-.intro{
+.intro-container{
     height: 34vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background-color: $bg-grey;
+
+
+}
+.intro{
+    height: 80%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding-bottom: 10%;
     align-items: center;
     text-align: center;
     &__heading{
         width: 70%;
-        padding-top: 10%;
+    }
+    &__text{
+        padding: 0 10% 0 10%;
     }
    
     &__button{
@@ -119,13 +150,12 @@ a{
         width: 50%;
         border: none;
         border-radius: 6vw;
-        @include button-intro-gradient;
         box-shadow: $shadow;
+        @include button-intro-gradient;
     }
     &__link{
         text-decoration: none;
         color: white;
-        font-size: 3.8vw;
     }
     
 }
@@ -161,7 +191,7 @@ a{
             position: relative;
             box-shadow: $shadow;
             background-color: #f6f6f6;
-            &--purple{
+            &:hover{
                 background-color: lighten($primaire,30%);
                 & i{
                     color: $primaire;
@@ -172,14 +202,16 @@ a{
             background-color: $primaire;
             color: white;
             border-radius: 50%;
-            height: 6vw;
-            width: 6vw;
             display: flex;
             justify-content: center;
             align-items: center;
             position: absolute;
-            left: -3vw;
-            font-size: 3vw;
+            $list-number-size: clamp(14px,4vw,30px);
+            $list-number-position: calc($list-number-size * -1);
+            font-size: $list-number-size;
+            left: $list-number-position;
+            height: calc($list-number-size*2);
+            width: calc($list-number-size*2);
             font-weight: bold;
         }
         &__lign-text{
@@ -194,37 +226,43 @@ a{
 .restaurants{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     width: 100vw;
-    height: 220vh;
+    // height: 170vh;
     background-color: $bg-grey;
-    &__list{
-        width: 90%;
-        height: 90%;
+    &__heading{
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: flex-end;
+        height: 5vh;
+        width: 90%;
+        margin-bottom: 5vh;
     }
-    &__heading{
-        align-self: flex-start;
-        padding: 0 0 0 5%;
+    &__list{
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10vh;
+        & li{
+            margin-bottom: 2vh;
+        }
     }
 }  
-.restaurant-card{
-    height: 35vh;
+.restaurant-card{ 
     position: relative;
     background-color: white;
     border-radius: 4vw;
     box-shadow: $shadow;
+    
     &__link{
         color: black;
     }
     &__img{
         border-radius: 4vw 4vw 0 0;
         width: 100%;
-        height: 70%;
         object-fit: cover;
+        aspect-ratio: 16/9;
     }
     &__new{
         color: #008766;
@@ -240,29 +278,229 @@ a{
         }
     }
     &__bottom-card{
-        position: relative;
-        margin-top: 2%;
-        padding-left: 4%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding:5%;
     }
     &__title{
         white-space: nowrap;
-        padding-bottom: 1%;
+        padding-bottom: 2%;
     }
     &__like i{
-        position: absolute;
-        right: 4%;
-        top: 20%;
         font-size: 6vw;
     }
-   
-    .hover{
-        opacity: 0;
+    &__like i:hover{
+        font-weight: 600;
         @include icon-gradient();  
-      
     }
-    .hover:hover{
-        opacity: 1;
+   
+}
+
+// Pages menu
+.menu-header{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    // background-color: #008766;
+    position: relative;
+    margin-top: 2vh;
+    height: 6vh;
+    &__link{
+        position: absolute;
+        text-decoration: none;
+        color: black;
+        left:4%
     }
+    &__heading{
+        font-size: 6vw;
+    }
+
+}
+.intro-menu{
+    position: relative;
+    &__img{
+        width: 100%;
+    }
+    &__heading{
+        display: flex;
+        justify-content: space-between;
+        padding: 10% 5% 0 5%;
+        position: absolute;
+        bottom: 0px;
+        background-color: $bg-grey;
+        width: 100%;
+        border-radius: 40px 40px 0 0;
+    }
+    &__title{
+        @include brand-font();
+        font-size: 6vw;
+        padding-bottom: 10%;
+    }
+    &__like i{
+        font-size: 6vw;
+    }
+    &__like i:hover{
+        font-weight: 600;
+        @include icon-gradient();  
+    }
+}
+.menu{
+    background-color: $bg-grey;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &__heading{
+        width: 90%;
+        text-transform: uppercase;
+        position: relative;
+        margin-bottom: 2%;
+        font-weight: 400;
+        &-border{
+            position: absolute;
+            border-bottom: 4px solid $tertiaire;
+            width: 10%;
+            bottom: -20%;
+            left: 0;
+        }
+    }
+}
+
+.menu-form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &-list{
+        width: 90%;
+        margin-bottom: 5%;
+        &__lign{
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            background-color: white;
+            width: 100%;
+            border-radius: 4vw;
+            box-shadow: $shadow;
+            margin-bottom: 2%;
+            
+
+            &-checkbox:checked ~ &-price{
+                transform: translateX(0%);
+            }
+            &-checkbox:checked ~ &-box{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transform: translateX(0%);
+                & i{
+                    transform: rotate(360deg);
+                }
+            }
+            &-checkbox:checked + &-left-group{
+                .menu-form-list__lign-text, .menu-form-list__lign-title{
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+            }
+        }
+        &__lign-label{
+            display: flex;
+            width: 100%;
+            
+            overflow: hidden;
+            cursor: pointer;
+        }
+        &__lign-left-group{
+            padding: 3% 0 3% 3%;
+            display: flex;
+            flex-direction: column;
+            width: 65%;
+            white-space: nowrap;
+        }
+        &__lign-title{
+            padding-bottom: 3%;
+        }
+        &__lign-text{
+        }
+        &__lign-price{
+            display: flex;
+            align-items: flex-end;
+            font-weight: bold;
+            padding: 3%;
+            transform: translateX(150%);
+            transition: transform 200ms;
+            height: 100%;
+            
+
+        }
+        &__lign-checkbox{
+            position: absolute;
+            visibility: hidden;
+           
+
+        }
+        &__lign-box{
+            width: 20vw;
+            background-color: $tertiaire;
+            display: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;          
+            transform: translateX(100%);
+            border-radius: 0% 4vw 4vw 0;
+            transition: transform 200ms;
+           
+            & i{
+                font-size: 4vw;
+                color: white;
+                transition: transform 400ms;
+            }
+        }
+    }
+    &__button{
+        margin-bottom: 10%;
+    }
+}
+.footer{
+    display: flex;
+    flex-direction: column;
+    background-color: #353535;
+    align-items: center;
   
-    
+    &__heading{
+        @include brand-font();
+        color: white;
+        display: flex;
+        align-items: center;
+        font-size: 4.5vw;
+        height: 15vw;
+        width: 90%;
+    }
+    &__nav{
+        height: 30vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 90%;
+        gap: 10%;
+        margin-bottom: 5vw;
+    }
+}
+.footer-lign{
+    height: 15%;
+    color: white;
+    &__icon{
+        padding-right: 2%;
+        &--large{
+            font-size: 0.7em;
+        }
+    }
+    &__link{
+        color: white;
+    }
 }

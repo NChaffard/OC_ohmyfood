@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.1">
+        <!-- Import font awesome 5.15.4 pour les icones -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+        <!-- Import CSS -->
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./css/normalize.css">
+
+        <title>Ohmyfood!</title>
+    </head>
+    <body>
+       
+            <header class="menu-header">
+                <a class="menu-header__link" href="./index.html"><i class="fa-solid fa-arrow-left"></i></a>
+                <h1 class="menu-header__heading">ohmyfood</h1>
+            </header>
+            <main class="main">
+                    <section class="intro-menu">
+                        <img class="intro-menu__img" src="./images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="La palette du goût">
+                        <div class="intro-menu__heading">
+                            <h2 class="intro-menu__title">La palette du goût</h2>
+                            <div class="intro-menu__like"><i class="far fa-heart"></i></div>
+                        </div>
+                    </section>
+                    <section class="menu">
+                        <h3 class="menu__heading">entrées<div class="menu__heading-border"></div></h3>
+                        <form class="menu-form" action=""id="menu">
+                            <ul class="menu-form-list">
+                                <li class="menu-form-list__lign">
+                                    <label class="menu-form-list__lign-label" for="entree1">
+                                        <input class="menu-form-list__lign-checkbox" type="checkbox" id="entree1" name="entree1" value="1">
+                                        <div class="menu-form-list__lign-left-group">
+                                            <h4 class="menu-form-list__lign-title">Fricassée d'escargot</h4>
+                                            <p class="menu-form-list__lign-text">Au piment d'Espelette</p>
+                                        </div>
+                                        <p class="menu-form-list__lign-price">25€</p>
+                                        <div class="menu-form-list__lign-box"><i class="fa-solid fa-circle-check"></i></div>
+                                    </label>
+                                </li>
+                                <li class="menu-form-list__lign">
+                                    <label class="menu-form-list__lign-label" for="entree2">
+                                        <input class="menu-form-list__lign-checkbox" type="checkbox" id="entree2" name="entree2" value="1">
+                                        <div class="menu-form-list__lign-left-group">
+                                            <h4 class="menu-form-list__lign-title">Foie gras de canard mi-cuit</h4>
+                                            <p class="menu-form-list__lign-text">Et ses copeaux de truffe noire</p>
+                                        </div>
+                                        <p class="menu-form-list__lign-price">35€</p>
+                                        <div class="menu-form-list__lign-box"><i class="fa-solid fa-circle-check"></i></div>
+                                    </label>
+                                </li>
+                                <li class="menu-form-list__lign">
+                                    <label class="menu-form-list__lign-label" for="entree3">
+                                        <input class="menu-form-list__lign-checkbox" type="checkbox" id="entree3" name="entree3" value="1">
+                                        <div class="menu-form-list__lign-left-group">
+                                            <h4 class="menu-form-list__lign-title">Oeuf au plat</h4>
+                                            <p class="menu-form-list__lign-text">Assaisonné à la truffe sur lit de caviar
+                                            </p>
+                                        </div>
+                                        <p class="menu-form-list__lign-price">21€</p>
+                                        <div class="menu-form-list__lign-box"><i class="fa-solid fa-circle-check"></i></div>
+                                    </label>
+                                </li>
+                            </ul>
+                            <h3 class="menu__heading">plats<div class="menu__heading-border"></div></h3>
+                            <ul class="menu-form-list">
+                                <li class="menu-form-list__lign">
+                                    <label class="menu-form-list__lign-label" for="plat1">
+                                        <input class="menu-form-list__lign-checkbox" type="checkbox" id="plat1" name="plat1" value="1">
+                                        <div class="menu-form-list__lign-left-group">
+                                            <h4 class="menu-form-list__lign-title">Filet de boeuf aux herbes</h4>
+                                            <p class="menu-form-list__lign-text">Accompagné de sa ribambelle de légumes</p>
+                                        </div>
+                                        <p class="menu-form-list__lign-price">41€</p>
+                                        <div class="menu-form-list__lign-box"><i class="fa-solid fa-circle-check"></i></div>
+                                    </label>
+                                </li>
+                                <li class="menu-form-list__lign">
+                                    <label class="menu-form-list__lign-label" for="plat2">
+                                        <input class="menu-form-list__lign-checkbox" type="checkbox" id="plat2" name="plat2" value="1">
+                                        <div class="menu-form-list__lign-left-group">
+                                            <h4 class="menu-form-list__lign-title">Parmentier de queue de boeuf</h4>
+                                            <p class="menu-form-list__lign-text">À la truffe noire sur sa purée de panais</p>
+                                        </div>
+                                        <p class="menu-form-list__lign-price">35€</p>
+                                        <div class="menu-form-list__lign-box"><i class="fa-solid fa-circle-check"></i></div>
+                                    </label>
+                                </li>
+                                <li class="menu-form-list__lign">
+                                    <label class="menu-form-list__lign-label" for="plat3">
+                                        <input class="menu-form-list__lign-checkbox" type="checkbox" id="plat3" name="plat3" value="1">
+                                        <div class="menu-form-list__lign-left-group">
+                                            <h4 class="menu-form-list__lign-title">Filet de turbot</h4>
+                                            <p class="menu-form-list__lign-text">Aux agrumes</p>
+                                        </div>
+                                        <p class="menu-form-list__lign-price">44€</p>
+                                        <div class="menu-form-list__lign-box"><i class="fa-solid fa-circle-check"></i></div>
+                                    </label>
+                                </li>
+                            </ul>
+                            <h3 class="menu__heading">desserts<div class="menu__heading-border"></div></h3>
+                            <ul class="menu-form-list">
+                                <li class="menu-form-list__lign">
+                                    <label class="menu-form-list__lign-label" for="dessert1">
+                                        <input class="menu-form-list__lign-checkbox" type="checkbox" id="dessert1" name="dessert1" value="1">
+                                        <div class="menu-form-list__lign-left-group">
+                                            <h4 class="menu-form-list__lign-title">Paris-Brest</h4>
+                                            <p class="menu-form-list__lign-text">Revisité</p>
+                                        </div>
+                                        <p class="menu-form-list__lign-price">18€</p>
+                                        <div class="menu-form-list__lign-box"><i class="fa-solid fa-circle-check"></i></div>
+                                    </label>
+                                </li>
+                                <li class="menu-form-list__lign">
+                                    <label class="menu-form-list__lign-label" for="dessert2">
+                                        <input class="menu-form-list__lign-checkbox" type="checkbox" id="dessert2" name="dessert2" value="1">
+                                        <div class="menu-form-list__lign-left-group">
+                                            <h4 class="menu-form-list__lign-title">Macaron au chocolat d'exception</h4>
+                                            <p class="menu-form-list__lign-text">Et glace à la vanille de Madagascar</p>
+                                        </div>
+                                        <p class="menu-form-list__lign-price">22€</p>
+                                        <div class="menu-form-list__lign-box"><i class="fa-solid fa-circle-check"></i></div>
+                                    </label>
+                                </li>
+                                <li class="menu-form-list__lign">
+                                    <label class="menu-form-list__lign-label" for="dessert3">
+                                        <input class="menu-form-list__lign-checkbox" type="checkbox" id="dessert3" name="dessert3" value="1">
+                                        <div class="menu-form-list__lign-left-group">
+                                            <h4 class="menu-form-list__lign-title">Mousse au chocolat</h4>
+                                            <p class="menu-form-list__lign-text">Au piment d'Espelette et à la truffe noire</p>
+                                        </div>
+                                        <p class="menu-form-list__lign-price">23€</p>
+                                        <div class="menu-form-list__lign-box"><i class="fa-solid fa-circle-check"></i></div>
+                                    </label>
+                                </li>
+                            </ul>
+                            <button class="button menu-form__button" type="submit" form="menu">Commander</button>
+                        </form>
+                    </section>
+
+                
+            </main>
+            <footer class="footer">
+                <h2 class="footer__heading">ohmyfood</h2>
+                <ul class="footer__nav">
+                    <li class="footer-lign"><span class="footer-lign__icon"><i class="fas fa-utensils"></i></span><a class="footer-lign__link" href="#">Proposer un restaurant</a></li>
+                    <li class="footer-lign"><span class="footer-lign__icon footer-lign__icon--large"><i class="fa-solid fa-handshake-angle"></i></span><a class="footer-lign__link" href="#">Devenir partenaire</a></li>
+                    <li class="footer-lign"><a class="footer-lign__link" href="#">Mentions légales</a></li>
+                    <li class="footer-lign"><adress class="footer-lign__adress"><a class="footer-lign__link" href="#">Contact</a></adress></li>
+                </ul>
+            </footer>
+    </body>
