@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        
-        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Import font awesome pour les icones -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
         <!-- Import CSS -->
         <link rel="stylesheet" href="./css/normalize.css">
         <link rel="stylesheet" href="./css/style.css">
 
-        <title>Ohmyfood!</title>
+        <title>Ohmyfood: À la française</title>
     </head>
     <body class="menu-body">
             <header class="menu-header">
@@ -18,9 +18,9 @@
             </header>
             <main class="main">
                     <section class="menu-intro">
-                        <img class="menu-intro__img" src="./images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="La palette du goût">
+                        <img class="menu-intro__img" src="./images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="À la française">
                         <div class="menu-intro__heading">
-                            <h2 class="menu-intro__title">La palette du goût</h2>
+                            <h2 class="menu-intro__title">À la française</h2>
                             <input class="menu-intro__checkbox" type="checkbox" id="like1">
                             <label class="menu-intro__like" for="like1">
                                 <i class="far fa-heart"></i>
@@ -28,114 +28,123 @@
                         </div>
                     </section>
                     <section class="menu">
-                        <form class="menu__form" action="" id="menu">
+                        <form class="menu__form" action="#" id="menu">
                             <h3 class="menu__heading" id="entrees-title">entrées</h3>
                             <ul class="menu__list" id="entrees">
                                 <li class="menu__line">
-                                    <label class="card dish-card" for="entree1">
+                                    <div class="card dish-card">
+                                        <label class="dish-card__label" for="entree1"></label>
                                         <input class="dish-card__checkbox" type="checkbox" id="entree1" name="entree1" value="1">
                                         <div class="dish-card__left-group">
-                                            <h4 class="dish-card__title">Fricassée d'escargot</h4>
-                                            <p class="dish-card__text">Au piment d'Espelette</p>
+                                            <h4 class="dish-card__title">Tartare de poulpe acidulé</h4>
+                                            <p class="dish-card__text">Aux zestes d'orange</p>
                                         </div>
                                         <p class="dish-card__price">25€</p>
                                         <div class="dish-card__box"><i class="fa-solid fa-circle-check"></i></div>
-                                    </label>
+                                    </div>
+                                
                                 </li>
                                 <li class="menu__line">
-                                    <label class="card dish-card" for="entree2">
+                                    <div class="card dish-card">
+                                        <label class="dish-card__label" for="entree2"></label>
                                         <input class="dish-card__checkbox" type="checkbox" id="entree2" name="entree2" value="1">
                                         <div class="dish-card__left-group">
-                                            <h4 class="dish-card__title">Foie gras de canard mi-cuit</h4>
-                                            <p class="dish-card__text">Et ses copeaux de truffe noire</p>
+                                            <h4 class="dish-card__title">Velouté de légumes d'antan</h4>
+                                            <p class="dish-card__text">Carotte, panais, topinambour</p>
                                         </div>
                                         <p class="dish-card__price">35€</p>
                                         <div class="dish-card__box"><i class="fa-solid fa-circle-check"></i></div>
-                                    </label>
-                                </li>
+                                    </div>
+                                    </li>
                                 <li class="menu__line">
-                                    <label class="card dish-card" for="entree3">
+                                    <div class="card dish-card">
+                                        <label class="dish-card__label" for="entree3"></label>
                                         <input class="dish-card__checkbox" type="checkbox" id="entree3" name="entree3" value="1">
                                         <div class="dish-card__left-group">
-                                            <h4 class="dish-card__title">Oeuf au plat</h4>
-                                            <p class="dish-card__text">Assaisonné à la truffe sur lit de caviar
-                                            </p>
+                                            <h4 class="dish-card__title">Soupe à l'oignon</h4>
+                                            <p class="dish-card__text">Revisitée</p>
                                         </div>
-                                        <p class="dish-card__price">21€</p>
+                                        <p class="dish-card__price">20€</p>
                                         <div class="dish-card__box"><i class="fa-solid fa-circle-check"></i></div>
-                                    </label>
-                                </li>
+                                    </div>
+                                    </li>
                             </ul>
                             <h3 class="menu__heading" id="plats-title">plats</h3>
                             <ul class="menu__list" id="plats">
                                 <li class="menu__line">
-                                    <label class="card dish-card" for="plat1">
+                                    <div class="card dish-card">
+                                        <label class="dish-card__label" for="plat1"></label>
                                         <input class="dish-card__checkbox" type="checkbox" id="plat1" name="plat1" value="1">
                                         <div class="dish-card__left-group">
-                                            <h4 class="dish-card__title">Filet de boeuf aux herbes</h4>
-                                            <p class="dish-card__text">Accompagné de sa ribambelle de légumes</p>
+                                            <h4 class="dish-card__title">Coquilles Saint-Jacques</h4>
+                                            <p class="dish-card__text">Accompagnées d'une purée de panais</p>
                                         </div>
-                                        <p class="dish-card__price">41€</p>
+                                        <p class="dish-card__price">40€</p>
                                         <div class="dish-card__box"><i class="fa-solid fa-circle-check"></i></div>
-                                    </label>
+                                   </div>
                                 </li>
                                 <li class="menu__line">
-                                    <label class="card dish-card" for="plat2">
+                                    <div class="card dish-card">
+                                        <label class="dish-card__label" for="plat2"></label>
                                         <input class="dish-card__checkbox" type="checkbox" id="plat2" name="plat2" value="1">
                                         <div class="dish-card__left-group">
-                                            <h4 class="dish-card__title">Parmentier de queue de boeuf</h4>
-                                            <p class="dish-card__text">À la truffe noire sur sa purée de panais</p>
+                                            <h4 class="dish-card__title">Magret de canard</h4>
+                                            <p class="dish-card__text">Et parmentier de pommes de terre</p>
                                         </div>
                                         <p class="dish-card__price">35€</p>
                                         <div class="dish-card__box"><i class="fa-solid fa-circle-check"></i></div>
-                                    </label>
+                                   </div>
                                 </li>
                                 <li class="menu__line">
-                                    <label class="card dish-card" for="plat3">
+                                    <div class="card dish-card">
+                                        <label class="dish-card__label" for="plat3"></label>
                                         <input class="dish-card__checkbox" type="checkbox" id="plat3" name="plat3" value="1">
                                         <div class="dish-card__left-group">
-                                            <h4 class="dish-card__title">Filet de turbot</h4>
-                                            <p class="dish-card__text">Aux agrumes</p>
+                                            <h4 class="dish-card__title">Pigeonneau d’Ille-et-Vilaine</h4>
+                                            <p class="dish-card__text">Sur son lit de gnocchis aux légumes</p>
                                         </div>
                                         <p class="dish-card__price">44€</p>
                                         <div class="dish-card__box"><i class="fa-solid fa-circle-check"></i></div>
-                                    </label>
+                                  </div>
                                 </li>
                             </ul>
                             <h3 class="menu__heading" id="desserts-title">desserts</h3>
                             <ul class="menu__list" id="desserts">
                                 <li class="menu__line">
-                                    <label class="card dish-card" for="dessert1">
+                                    <div class="card dish-card">
+                                        <label class="dish-card__label" for="dessert1"></label>
                                         <input class="dish-card__checkbox" type="checkbox" id="dessert1" name="dessert1" value="1">
                                         <div class="dish-card__left-group">
-                                            <h4 class="dish-card__title">Paris-Brest</h4>
-                                            <p class="dish-card__text">Revisité</p>
+                                            <h4 class="dish-card__title">Pétales de violettes glacés</h4>
+                                            <p class="dish-card__text">Et purée de noisettes</p>
                                         </div>
                                         <p class="dish-card__price">18€</p>
                                         <div class="dish-card__box"><i class="fa-solid fa-circle-check"></i></div>
-                                    </label>
+                                   </div>
                                 </li>
                                 <li class="menu__line">
-                                    <label class="card dish-card" for="dessert2">
+                                    <div class="card dish-card">
+                                        <label class="dish-card__label" for="dessert2"></label>
                                         <input class="dish-card__checkbox" type="checkbox" id="dessert2" name="dessert2" value="1">
                                         <div class="dish-card__left-group">
-                                            <h4 class="dish-card__title">Macaron au chocolat d'exception</h4>
-                                            <p class="dish-card__text">Et glace à la vanille de Madagascar</p>
+                                            <h4 class="dish-card__title">Fondant au chocolat</h4>
+                                            <p class="dish-card__text">Revisité</p>
                                         </div>
                                         <p class="dish-card__price">22€</p>
                                         <div class="dish-card__box"><i class="fa-solid fa-circle-check"></i></div>
-                                    </label>
+                                    </div>
                                 </li>
                                 <li class="menu__line">
-                                    <label class="card dish-card" for="dessert3">
+                                    <div class="card dish-card">
+                                        <label class="dish-card__label" for="dessert3"></label>
                                         <input class="dish-card__checkbox" type="checkbox" id="dessert3" name="dessert3" value="1">
                                         <div class="dish-card__left-group">
-                                            <h4 class="dish-card__title">Mousse au chocolat</h4>
-                                            <p class="dish-card__text">Au piment d'Espelette et à la truffe noire</p>
+                                            <h4 class="dish-card__title">Millefeuille croustillant</h4>
+                                            <p class="dish-card__text">Myrtilles et pâte d’amande</p>
                                         </div>
                                         <p class="dish-card__price">23€</p>
                                         <div class="dish-card__box"><i class="fa-solid fa-circle-check"></i></div>
-                                    </label>
+                                    </div>
                                 </li>
                             </ul>
                             <button class="button menu__button" type="submit" form="menu">Commander</button>
@@ -148,7 +157,7 @@
                     <li class="footer__line"><span class="footer__icon"><i class="fas fa-utensils fa-fw"></i></span><a class="footer__link" href="#">Proposer un restaurant</a></li>
                     <li class="footer__line"><span class="footer__icon"><i class="fa-solid fa-handshake-angle fa-fw"></i></span><a class="footer__link" href="#">Devenir partenaire</a></li>
                     <li class="footer__line"><a class="footer__link" href="#">Mentions légales</a></li>
-                    <li class="footer__line"><adress class="footer__adress"><a class="footer__link" href="#">Contact</a></adress></li>
+                    <li class="footer__line"><address class="footer__adress"><a class="footer__link" href="mailto:ohmyfood@ohmyfood.com">Contact</a></address></li>
                 </ul>
             </footer>
     </body>

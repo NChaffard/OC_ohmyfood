@@ -37,6 +37,58 @@
     transform: translateY(0%);
   }
 }
+@-webkit-keyframes page-appear {
+  from {
+    visibility: hidden;
+  }
+  to {
+    visibility: visible;
+  }
+}
+@keyframes page-appear {
+  from {
+    visibility: hidden;
+  }
+  to {
+    visibility: visible;
+  }
+}
+@-webkit-keyframes loader-disappear {
+  0% {
+    opacity: 100%;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0%;
+    visibility: hidden;
+  }
+}
+@keyframes loader-disappear {
+  0% {
+    opacity: 100%;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0%;
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 *, a {
   margin: 0;
   padding: 0;
@@ -98,7 +150,12 @@ a {
 }
 
 label {
+  z-index: 1;
   cursor: pointer;
+}
+
+address {
+  font-style: normal;
 }
 
 .button {
@@ -208,6 +265,30 @@ label {
   }
 }
 
+.loader-container {
+  z-index: 2;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  -webkit-animation: loader-disappear 1000ms 2000ms both;
+          animation: loader-disappear 1000ms 2000ms both;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader-container__loader {
+  position: fixed;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: transparent 10px solid;
+  border-top: #9356dc 20px solid;
+  border-bottom: #ff79da 20px solid;
+  -webkit-animation: spin 3s linear infinite;
+          animation: spin 3s linear infinite;
+}
+
 .header {
   height: 10vh;
   display: flex;
@@ -218,6 +299,7 @@ label {
 .header__heading {
   align-self: center;
 }
+
 .hero {
   height: 90vh;
 }
@@ -274,10 +356,6 @@ label {
 }
 .intro__text {
   padding: 0 10% 0 10%;
-}
-.intro__link {
-  text-decoration: none;
-  color: white;
 }
 @media (min-width: 992px) {
   .intro__button {
@@ -476,6 +554,11 @@ label {
   -webkit-animation: heart-fill 100ms both;
           animation: heart-fill 100ms both;
 }
+.restaurant-card__like {
+  position: absolute;
+  right: 5%;
+  bottom: 10%;
+}
 .restaurant-card__like i {
   font-size: 6vw;
 }
@@ -512,9 +595,6 @@ label {
   color: black;
   left: 4%;
 }
-.menu-header__heading {
-  font-size: 6vw;
-}
 @media (min-width: 992px) {
   .menu-header {
     margin: 0;
@@ -524,6 +604,9 @@ label {
   }
   .menu-header__heading {
     font-size: 60px;
+  }
+  .menu-header__link i {
+    font-size: 30px;
   }
 }
 
@@ -652,6 +735,10 @@ label {
   -webkit-animation: line-appear 1000ms 800ms both;
           animation: line-appear 1000ms 800ms both;
 }
+.menu__list li:nth-child(4) {
+  -webkit-animation: line-appear 1000ms 1600ms both;
+          animation: line-appear 1000ms 1600ms both;
+}
 .menu__line {
   display: flex;
   justify-content: space-between;
@@ -730,10 +817,16 @@ label {
 }
 
 .dish-card {
+  position: relative;
   display: flex;
   width: 100%;
   justify-content: space-between;
   overflow: hidden;
+}
+.dish-card__label {
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 .dish-card__checkbox:checked ~ .dish-card__price {
   transform: translateX(0%);
@@ -825,5 +918,13 @@ label {
   }
   .dish-card__box i {
     font-size: 2vw;
+  }
+}
+@media (min-width: 1600px) {
+  .dish-card {
+    max-height: 90px;
+  }
+  .dish-card__left-group {
+    padding: 5px 0 5px 15px;
   }
 }/*# sourceMappingURL=style.css.map */

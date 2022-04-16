@@ -76,4 +76,7 @@
     @if $point == desktop-mini{
         @media (min-width: 992px) and (max-width: 1600px){ @content; }
     }
+    @if $point == desktop-maxi{
+        @media (min-width: 1600px){ @content; }
+    }
 }

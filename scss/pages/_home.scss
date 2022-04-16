@@ -1,3 +1,32 @@
+
+.home{
+    // animation: page-appear 1ms 2000ms both;
+}
+
+.loader-container{
+    z-index: 2;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    animation: loader-disappear 1000ms 2000ms both;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__loader{
+        position: fixed;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: transparent 10px solid;
+        border-top: $primaire 20px solid;
+        border-bottom: $secondaire 20px solid;
+        animation: spin 3s linear infinite;
+    }
+}
+
+
+
 // header
 .header{
     height: 10vh;
@@ -8,16 +37,11 @@
   
     &__heading{
         align-self: center;
-    }
-    @include breakpoint(desktop){
-        // height: 5vh;
-    }
- 
+    } 
 }
 // Mise en place hauteur hero
 .hero{
     height: 90vh;
-    // .hero desktop
     @include breakpoint(desktop){
         height: 30vh;
     }
@@ -32,15 +56,15 @@
     &__place{
         padding: 15px 0 15px 0;
     }
-    
     &__location{
         font-weight: bold;
         padding-left: 10px;
     }
-    // .location desktop
-    @include breakpoint(desktop){
-        height: 20%;
-    }
+
+// .location desktop
+@include breakpoint(desktop){
+    height: 20%;
+}
  
 }
       
@@ -53,10 +77,11 @@
     flex-direction: column;
     justify-content: center;
     background-color: $bg-grey;
-    // .intro-container desktop
-    @include breakpoint(desktop){
-        height: 40%;
-    }
+
+// .intro-container desktop
+@include breakpoint(desktop){
+    height: 40%;
+}
 
 
 }
@@ -73,18 +98,13 @@
     &__text{
         padding: 0 10% 0 10%;
     }
-     
-    &__link{
-        text-decoration: none;
-        color: white;
-    }
-    // .intro desktop
-    @include breakpoint(desktop){
-        &__button{
-            display: none;
-        }
-    }
     
+// .intro desktop
+@include breakpoint(desktop){
+    &__button{
+        display: none;
+    }
+}   
 }
 
 // description
@@ -146,30 +166,31 @@
         position: absolute;
         left: 10%;
     }
-    // .description desktop
-    @include breakpoint(desktop){
-        background-color: $bg-grey;
-        margin: 0;
-        height: 40%;
-        justify-content: center;
-        align-items: center;
-        &__heading{
-            height: 30%;
-            width: 90%;
-        }
-        &__list{
-            height: 70%;
-            flex-direction: row;
-            justify-content: space-between;
-            width: 90%;
-        }
-        &__line{
-            align-self: center;
-            width: 25%;
-            height: 80%;
-            background-color: white;
-        }
+
+// .description desktop
+@include breakpoint(desktop){
+    background-color: $bg-grey;
+    margin: 0;
+    height: 40%;
+    justify-content: center;
+    align-items: center;
+    &__heading{
+        height: 30%;
+        width: 90%;
     }
+    &__list{
+        height: 70%;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 90%;
+    }
+    &__line{
+        align-self: center;
+        width: 25%;
+        height: 80%;
+        background-color: white;
+    }
+}
 }
 
 .restaurants{
@@ -196,42 +217,40 @@
     &__line{
         margin-bottom: 2vh;
     }
-    // .restaurants desktop
-    @include breakpoint(desktop){
-        height: 50vh;
-        &__heading{
-            margin: 0;
-            height: 10%;
-        }
-        &__list{
-            margin: 0;
-            height: 80%;
-            display: grid;
-            grid-template-columns: repeat(4, 22%);
-            justify-content: space-between;
-            align-items: center;
-        }
-        &__line{
-            margin: 0;
-        }
-    }
-    @include breakpoint(desktop-mini){
-        &__list{
-            grid-template-columns: 40% 40%;
-            column-gap: 5%;
-            row-gap: 5%;
-            justify-content: center;
-            align-content: center;
-            max-width: 46%;
-            min-width: 724px;
-        }
-        
-    }
 
-        
+// .restaurants desktop
+@include breakpoint(desktop){
+    height: 50vh;
+    &__heading{
+        margin: 0;
+        height: 10%;
+    }
+    &__list{
+        margin: 0;
+        height: 80%;
+        display: grid;
+        grid-template-columns: repeat(4, 22%);
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__line{
+        margin: 0;
+    }
+}
+@include breakpoint(desktop-mini){
+    &__list{
+        grid-template-columns: 40% 40%;
+        column-gap: 5%;
+        row-gap: 5%;
+        justify-content: center;
+        align-content: center;
+        max-width: 46%;
+        min-width: 724px;
+    }     
+}        
 }  
 .restaurant-card{ 
-    position: relative;   
+    position: relative; 
     &__link{
         color: black;
     }
@@ -272,16 +291,22 @@
             @include icon-gradient();
         }
     }
+    &__like{
+        position: absolute;
+        right: 5%;
+        bottom: 10%;
+    }
     &__like i{
         font-size: 6vw;
-    } 
-    @include breakpoint(desktop){
-        border-radius: 20px;
-        &__img{
-            border-radius: 20px 20px 0 0;
-        }
-        &__like i{
-            font-size: 1.5vw;
-        }
-    }  
+    }
+// .restaurant-card desktop 
+@include breakpoint(desktop){
+    border-radius: 20px;
+    &__img{
+        border-radius: 20px 20px 0 0;
+    }
+    &__like i{
+        font-size: 1.5vw;
+    }
+}  
 }

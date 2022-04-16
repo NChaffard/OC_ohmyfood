@@ -17,3 +17,34 @@
             transform: translateY(0%);
         }
     }
+
+    // Apparition de la page
+    @keyframes page-appear{
+        from{
+            // opacity: 0%;
+            visibility: hidden;
+            
+        }
+        to{
+            // opacity: 100%;
+            visibility: visible;
+        }
+    }
+    @keyframes loader-disappear{
+        0%{
+            opacity: 100%;
+            visibility: visible;
+        }
+        100%{
+            opacity: 0%;
+            visibility: hidden;
+        }
+    }
+    @keyframes spin{
+        from{
+            transform: rotate(0deg);
+        }
+        to{
+            transform: rotate(360deg);
+        }
+    }
