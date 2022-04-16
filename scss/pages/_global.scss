@@ -1,0 +1,135 @@
+//parametres globaux
+*, a{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    @include font();
+    user-select: none;
+    width: 100vw;
+}
+h1{
+    @include brand-font();
+}
+h2{
+    @include font(h2);
+}
+ul{
+    list-style: none;
+}
+a{
+    @include font();
+  }
+label{
+    cursor: pointer;
+}
+
+// Classes globales
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 12vw;
+    max-height: 95px;
+    width: 50%;
+    max-width: 382px;
+    border: none;
+    border-radius: 6vw;
+    box-shadow: $shadow;
+    color: white;
+    @include button-gradient;
+    cursor: pointer;
+    &:hover, &:active{
+        box-shadow: $shadow-hover;
+        filter: brightness(110%);
+    }
+    @include breakpoint(desktop){
+        min-width: 200px;
+    } 
+}
+.card{
+    background-color: white;
+    box-shadow: $shadow;
+    border-radius: 4vw;
+    &:hover, &:active{
+        box-shadow: $shadow-hover;
+    }
+    @include breakpoint(desktop){
+        border-radius: 20px;
+        min-height: 82px;
+    }   
+
+}
+
+
+
+
+
+   
+.footer{
+    display: flex;
+    flex-direction: column;
+    background-color: #353535;
+    align-items: center;
+    width: 100%;
+    &__heading{
+        @include brand-font();
+        color: white;
+        display: flex;
+        align-items: center;
+        font-size: 4.5vw;
+        height: 15vw;
+        width: 90%;
+    }
+    &__nav{
+        height: 30vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 90%;
+        gap: 10%;
+        margin-bottom: 5vw;
+    }
+    &__line{
+        height: 15%;
+        color: white;
+    }
+    &__icon{
+        padding-right: 2%;
+        &--large{
+            font-size: 0.7em;
+        }
+    }
+    &__link{
+        color: white;
+    }
+    // .footer desktop
+    @include breakpoint(desktop){
+        height: 10vh;
+        flex-direction: row;
+        &__heading{
+            display: none;
+            // justify-content: center;
+            // height: 100%;
+            // width: 20%;
+            // font-size: 50px;
+        }
+        &__nav{
+            height: 100%;
+            margin: 0;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+        &__line{
+            display: flex;
+            height: 100%;
+            white-space: nowrap;
+            align-items: center;
+        }
+    }
+}

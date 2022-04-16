@@ -1,0 +1,79 @@
+// Mixins
+
+    // fonts
+    @mixin font($font-type: default) {
+        font-family: Roboto, sans-serif;
+        @if $font-type == h2 {
+            font-size: clamp(22px, 6vw, 40px);
+            @include breakpoint(desktop){
+                font-size: clamp(24px, 2vw, 40px);
+            }
+        }
+        @if $font-type == menu-h3 {
+            text-transform: uppercase;
+            font-weight: 400;
+            font-size: clamp(10px, 4vw, 30px);
+            @include breakpoint(desktop){
+                font-size: clamp(20px, 1.8vw, 34px);
+            }       
+        }
+        @if $font-type == menu-h4 {
+            font-size: clamp(12px, 5vw, 30px);
+            @include breakpoint(desktop){
+                font-size: clamp(16px, 1.6vw, 32px);
+            }      
+        }
+        @if $font-type == default{
+            font-size: clamp(10px, 4vw, 30px);
+            @include breakpoint(desktop){
+                font-size: clamp(12px, 1.2vw, 26px);
+            }
+        }
+    }
+    
+    @mixin brand-font($font-type: default) {
+        font-family: Shrikhand, sans-serif;
+        font-weight: 200;
+        @if $font-type == default{
+            @include breakpoint(desktop){
+                font-size: 40px;
+            }
+        }
+        @if $font-type == menu-h2 {
+            font-size: clamp(20px, 7vw, 40px);
+            @include breakpoint(desktop){
+                font-size: 60px;
+            } 
+        }
+    }
+
+// Gradient
+    @mixin bg-location-gradient {
+        background: rgb(206,206,206);
+        background: linear-gradient(180deg, rgba(206,206,206,1) 0%, rgba(234,234,234,1) 15%); 
+    }
+    @mixin button-gradient {
+        background: rgb(255,121,218);
+        background: linear-gradient(172deg, rgba(255,121,218,1) 0%, rgba(147,86,220,1) 90%);     
+    }
+    @mixin icon-gradient{
+            background: rgb(255,121,218);
+            background: linear-gradient(172deg, rgba(147,86,220,1) 0%, rgba(255,121,218,1) 90%);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: heart-fill 100ms both;
+
+        }
+
+//-------------
+// Breakpoints
+//-------------
+
+@mixin breakpoint($point) {
+    @if $point == desktop{
+        @media (min-width: 992px){ @content; }
+    }
+    @if $point == desktop-mini{
+        @media (min-width: 992px) and (max-width: 1600px){ @content; }
+    }
+}

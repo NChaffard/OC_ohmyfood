@@ -1,0 +1,19 @@
+// Keyframes
+    // Checkbox coeur
+    @keyframes heart-fill {
+        from {
+            transform: scale(0);}
+        to { font-weight: 600;
+            transform: scale(1);}
+    }
+    // Apparition de ligne
+    @keyframes line-appear{
+        0%{
+            opacity: 0%;
+            transform: translateY(50%);
+        }
+        100%{
+            opacity: 100%;
+            transform: translateY(0%);
+        }
+    }

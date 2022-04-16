@@ -1,0 +1,286 @@
+// header
+.header{
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    padding-top: 2vh;
+    background-color: $bg-grey;
+  
+    &__heading{
+        align-self: center;
+    }
+    @include breakpoint(desktop){
+        // height: 5vh;
+    }
+
+}
+// Mise en place hauteur hero
+.hero{
+    height: 90vh;
+    // .hero desktop
+    @include breakpoint(desktop){
+        height: 30vh;
+    }
+}
+// location
+.location{
+    height: 6%;
+    @include bg-location-gradient();
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__place{
+        padding: 15px 0 15px 0;
+    }
+    
+    &__location{
+        font-weight: bold;
+        padding-left: 10px;
+    }
+    // .location desktop
+    @include breakpoint(desktop){
+        height: 20%;
+    }
+ 
+}
+      
+
+
+.intro-container{
+    height: 34%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $bg-grey;
+    // .intro-container desktop
+    @include breakpoint(desktop){
+        height: 40%;
+    }
+
+
+}
+.intro{
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    &__heading{
+        width: 70%;
+    }
+    &__text{
+        padding: 0 10% 0 10%;
+    }
+     
+    &__link{
+        text-decoration: none;
+        color: white;
+    }
+    // .intro desktop
+    @include breakpoint(desktop){
+        &__button{
+            display: none;
+        }
+    }
+    
+}
+
+// description
+.description{
+    margin-left: 5%;
+    margin-top: 5%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    &__heading{
+        height: 15%;
+        display: flex;
+        align-items: center;
+    }
+    &__list{
+        display: flex;
+        flex-direction: column;
+        height: 70%;
+        width: 90%;
+        align-self: center;
+        justify-content: space-around;    
+    }
+    &__line{
+        display: flex;
+        height: 25%;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        background-color: #f6f6f6;
+        &:hover, &:active{
+            background-color: lighten($primaire,30%);
+            & i{
+                color: $primaire;
+            }
+        }
+    }
+    &__line-number{
+        background-color: $primaire;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        $list-number-size: clamp(14px,4vw,20px);
+        $list-number-position: calc($list-number-size * -1);
+        font-size: $list-number-size;
+        left: $list-number-position;
+        height: calc($list-number-size*2);
+        width: calc($list-number-size*2);
+        font-weight: bold;
+    }
+    &__line-text{
+        font-weight: bold;
+    }
+    &__icon{
+        position: absolute;
+        left: 10%;
+    }
+    // .description desktop
+    @include breakpoint(desktop){
+        background-color: $bg-grey;
+        margin: 0;
+        height: 40%;
+        justify-content: center;
+        align-items: center;
+        &__heading{
+            height: 30%;
+            width: 90%;
+        }
+        &__list{
+            height: 70%;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 90%;
+        }
+        &__line{
+            align-self: center;
+            width: 25%;
+            height: 80%;
+            background-color: white;
+        }
+    }
+}
+
+.restaurants{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    background-color: $bg-grey;
+    &__heading{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        height: 5vh;
+        width: 90%;
+        margin-bottom: 5vh;
+    }
+    &__list{
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10vh;
+    }
+    &__line{
+        margin-bottom: 2vh;
+    }
+    // .restaurants desktop
+    @include breakpoint(desktop){
+        height: 50vh;
+        &__heading{
+            margin: 0;
+            height: 10%;
+        }
+        &__list{
+            margin: 0;
+            height: 80%;
+            display: grid;
+            grid-template-columns: repeat(4, 22%);
+            justify-content: space-between;
+            align-items: center;
+        }
+        &__line{
+            margin: 0;
+        }
+    }
+    @include breakpoint(desktop-mini){
+        &__list{
+            grid-template-columns: 40% 40%;
+            column-gap: 5%;
+            row-gap: 5%;
+            justify-content: center;
+            align-content: center;
+            max-width: 46%;
+            min-width: 724px;
+        }
+        
+    }
+
+        
+}  
+.restaurant-card{ 
+    position: relative;   
+    &__link{
+        color: black;
+    }
+    &__img{
+        border-radius: 4vw 4vw 0 0;
+        width: 100%;
+        object-fit: cover;
+        aspect-ratio: 16/9;
+    }
+    &__new{
+        color: #008766;
+        background-color: #99e2d0;
+        font-weight: bold;
+        padding: 2% 3% 2% 3%;
+        position: absolute;
+        right: 6%;
+        top: 6%;
+        display: none;
+        &--visible{
+            display: block;
+        }
+    }
+    &__bottom-card{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding:5%;
+    }
+    &__title{
+        white-space: nowrap;
+        padding-bottom: 2%;
+    }
+    &__checkbox{
+        position: absolute;
+        visibility: hidden;
+        &:checked + .restaurant-card__like i{
+            @include icon-gradient();
+        }
+    }
+    &__like i{
+        font-size: 6vw;
+    } 
+    @include breakpoint(desktop){
+        border-radius: 20px;
+        &__img{
+            border-radius: 20px 20px 0 0;
+        }
+        &__like i{
+            font-size: 1.5vw;
+        }
+    }  
+}
