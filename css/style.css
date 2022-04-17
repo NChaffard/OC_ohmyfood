@@ -121,7 +121,7 @@ h1 {
 }
 @media (min-width: 992px) {
   h1 {
-    font-size: 40px;
+    font-size: 60px;
   }
 }
 
@@ -218,7 +218,7 @@ address {
 }
 @media (min-width: 992px) {
   .footer__heading {
-    font-size: 40px;
+    font-size: 60px;
   }
 }
 .footer__nav {
@@ -263,6 +263,11 @@ address {
     white-space: nowrap;
     align-items: center;
   }
+}
+
+.home {
+  -webkit-animation: page-appear 1ms 2000ms both;
+          animation: page-appear 1ms 2000ms both;
 }
 
 .loader-container {
@@ -601,9 +606,6 @@ address {
     height: 10vh;
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
     background-color: #f6f6f6;
-  }
-  .menu-header__heading {
-    font-size: 60px;
   }
   .menu-header__link i {
     font-size: 30px;

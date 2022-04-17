@@ -34,9 +34,10 @@
     @mixin brand-font($font-type: default) {
         font-family: Shrikhand, sans-serif;
         font-weight: 200;
+
         @if $font-type == default{
             @include breakpoint(desktop){
-                font-size: 40px;
+                font-size: 60px;
             }
         }
         @if $font-type == menu-h2 {
