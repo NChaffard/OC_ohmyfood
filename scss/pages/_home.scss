@@ -1,6 +1,6 @@
 
 .home{
-    animation: page-appear 1ms 2000ms both;
+    // animation: page-appear 1ms 2000ms both;
 }
 
 .loader-container{
@@ -25,26 +25,9 @@
     }
 }
 
-
-
-// header
-.header{
-    height: 10vh;
-    display: flex;
-    justify-content: center;
-    padding-top: 2vh;
-    background-color: $bg-grey;
-  
-    &__heading{
-        align-self: center;
-    } 
-}
 // Mise en place hauteur hero
 .hero{
     height: 90vh;
-    @include breakpoint(desktop){
-        height: 30vh;
-    }
 }
 // location
 .location{
@@ -55,21 +38,14 @@
     align-items: center;
     &__place{
         padding: 15px 0 15px 0;
+        @include font(location);
+
     }
     &__location{
-        font-weight: bold;
         padding-left: 10px;
+        @include font(location);
     }
-
-// .location desktop
-@include breakpoint(desktop){
-    height: 20%;
 }
- 
-}
-      
-
-
 
 .intro-container{
     height: 34%;
@@ -77,14 +53,8 @@
     flex-direction: column;
     justify-content: center;
     background-color: $bg-grey;
-
-// .intro-container desktop
-@include breakpoint(desktop){
-    height: 40%;
 }
 
-
-}
 .intro{
     height: 80%;
     display: flex;
@@ -96,15 +66,13 @@
         width: 70%;
     }
     &__text{
-        padding: 0 10% 0 10%;
+        padding: 2% 10%;
     }
-    
-// .intro desktop
-@include breakpoint(desktop){
-    &__button{
-        display: none;
-    }
-}   
+    &__button-container{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }   
 }
 
 // description
@@ -126,11 +94,11 @@
         height: 70%;
         width: 90%;
         align-self: center;
-        justify-content: space-around;    
+        justify-content: space-around; 
     }
     &__line{
-        display: flex;
         height: 25%;
+        display: flex;
         text-align: center;
         justify-content: center;
         align-items: center;
@@ -151,7 +119,7 @@
         justify-content: center;
         align-items: center;
         position: absolute;
-        $list-number-size: clamp(14px,4vw,20px);
+        $list-number-size: clamp(12px,3vw,20px);
         $list-number-position: calc($list-number-size * -1);
         font-size: $list-number-size;
         left: $list-number-position;
@@ -166,31 +134,6 @@
         position: absolute;
         left: 10%;
     }
-
-// .description desktop
-@include breakpoint(desktop){
-    background-color: $bg-grey;
-    margin: 0;
-    height: 40%;
-    justify-content: center;
-    align-items: center;
-    &__heading{
-        height: 30%;
-        width: 90%;
-    }
-    &__list{
-        height: 70%;
-        flex-direction: row;
-        justify-content: space-between;
-        width: 90%;
-    }
-    &__line{
-        align-self: center;
-        width: 25%;
-        height: 80%;
-        background-color: white;
-    }
-}
 }
 
 .restaurants{
@@ -198,7 +141,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100vw;
+    width: 100%;
+
     background-color: $bg-grey;
     &__heading{
         display: flex;
@@ -206,7 +150,7 @@
         justify-content: flex-end;
         height: 5vh;
         width: 90%;
-        margin-bottom: 5vh;
+        margin: 5vh;
     }
     &__list{
         width: 90%;
@@ -217,38 +161,8 @@
     &__line{
         margin-bottom: 2vh;
     }
-
-// .restaurants desktop
-@include breakpoint(desktop){
-    height: 50vh;
-    &__heading{
-        margin: 0;
-        height: 10%;
-    }
-    &__list{
-        margin: 0;
-        height: 80%;
-        display: grid;
-        grid-template-columns: repeat(4, 22%);
-        justify-content: space-between;
-        align-items: center;
-    }
-    &__line{
-        margin: 0;
-    }
 }
-@include breakpoint(desktop-mini){
-    &__list{
-        grid-template-columns: 40% 40%;
-        column-gap: 5%;
-        row-gap: 5%;
-        justify-content: center;
-        align-content: center;
-        max-width: 46%;
-        min-width: 724px;
-    }     
-}        
-}  
+
 .restaurant-card{ 
     position: relative; 
     &__link{
@@ -293,20 +207,10 @@
     }
     &__like{
         position: absolute;
-        right: 5%;
+        right: 4%;
         bottom: 10%;
     }
     &__like i{
         font-size: 6vw;
     }
-// .restaurant-card desktop 
-@include breakpoint(desktop){
-    border-radius: 20px;
-    &__img{
-        border-radius: 20px 20px 0 0;
-    }
-    &__like i{
-        font-size: 1.5vw;
-    }
-}  
 }

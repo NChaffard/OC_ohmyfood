@@ -1,5 +1,5 @@
 // Import polices
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&family=Shrikhand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Shrikhand&display=swap');
 
 // Imports des blocs scss
 @import 'abstracts/variables';
@@ -8,4 +8,6 @@
 
 @import 'pages/global';
 @import 'pages/home';
+@import 'pages/home-desktop';
 @import 'pages/menu';
+@import 'pages/menu-desktop';

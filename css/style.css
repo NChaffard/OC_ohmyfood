@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&family=Shrikhand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Shrikhand&display=swap");
 @-webkit-keyframes heart-fill {
   from {
     transform: scale(0);
@@ -94,6 +94,10 @@
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 html {
@@ -102,16 +106,15 @@ html {
 
 body {
   font-family: Roboto, sans-serif;
+  font-weight: 300;
   font-size: clamp(10px, 4vw, 30px);
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
   width: 100vw;
+  max-width: 100%;
+  height: 100vh;
 }
-@media (min-width: 992px) {
+@media (min-width: 1024px) {
   body {
-    font-size: clamp(12px, 1.2vw, 26px);
+    font-size: clamp(16px, 1.4vw, 26px);
   }
 }
 
@@ -119,7 +122,7 @@ h1 {
   font-family: Shrikhand, sans-serif;
   font-weight: 200;
 }
-@media (min-width: 992px) {
+@media (min-width: 1024px) {
   h1 {
     font-size: 60px;
   }
@@ -127,9 +130,11 @@ h1 {
 
 h2 {
   font-family: Roboto, sans-serif;
+  font-weight: 300;
+  font-weight: bold;
   font-size: clamp(22px, 6vw, 40px);
 }
-@media (min-width: 992px) {
+@media (min-width: 1024px) {
   h2 {
     font-size: clamp(24px, 2vw, 40px);
   }
@@ -141,11 +146,12 @@ ul {
 
 a {
   font-family: Roboto, sans-serif;
+  font-weight: 300;
   font-size: clamp(10px, 4vw, 30px);
 }
-@media (min-width: 992px) {
+@media (min-width: 1024px) {
   a {
-    font-size: clamp(12px, 1.2vw, 26px);
+    font-size: clamp(16px, 1.4vw, 26px);
   }
 }
 
@@ -162,14 +168,16 @@ address {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 12vw;
-  max-height: 95px;
+  height: 10vw;
+  max-height: 80px;
   width: 50%;
   max-width: 382px;
   border: none;
   border-radius: 6vw;
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
   color: white;
+  font-weight: 400;
+  font-size: 3.8vw;
   background: rgb(255, 121, 218);
   background: linear-gradient(172deg, rgb(255, 121, 218) 0%, rgb(147, 86, 220) 90%);
   cursor: pointer;
@@ -178,9 +186,11 @@ address {
   box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.2);
   filter: brightness(110%);
 }
-@media (min-width: 992px) {
+@media (min-width: 1024px) {
   .button {
-    min-width: 200px;
+    width: 250px;
+    height: 70px;
+    font-size: 20px;
   }
 }
 
@@ -192,10 +202,37 @@ address {
 .card:hover, .card:active {
   box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.2);
 }
-@media (min-width: 992px) {
+@media (min-width: 1024px) {
   .card {
     border-radius: 20px;
-    min-height: 82px;
+  }
+}
+
+.header {
+  position: relative;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  background-color: #f6f6f6;
+  flex-direction: row;
+}
+.header__heading {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.header__link {
+  position: absolute;
+  left: 5%;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  height: 100%;
+}
+@media (min-width: 1024px) {
+  .header__link i {
+    font-size: 30px;
   }
 }
 
@@ -216,7 +253,7 @@ address {
   height: 15vw;
   width: 90%;
 }
-@media (min-width: 992px) {
+@media (min-width: 1024px) {
   .footer__heading {
     font-size: 60px;
   }
@@ -243,7 +280,7 @@ address {
 .footer__link {
   color: white;
 }
-@media (min-width: 992px) {
+@media (min-width: 1024px) {
   .footer {
     height: 10vh;
     flex-direction: row;
@@ -263,11 +300,6 @@ address {
     white-space: nowrap;
     align-items: center;
   }
-}
-
-.home {
-  -webkit-animation: page-appear 1ms 2000ms both;
-          animation: page-appear 1ms 2000ms both;
 }
 
 .loader-container {
@@ -294,24 +326,8 @@ address {
           animation: spin 3s linear infinite;
 }
 
-.header {
-  height: 10vh;
-  display: flex;
-  justify-content: center;
-  padding-top: 2vh;
-  background-color: #f6f6f6;
-}
-.header__heading {
-  align-self: center;
-}
-
 .hero {
   height: 90vh;
-}
-@media (min-width: 992px) {
-  .hero {
-    height: 30vh;
-  }
 }
 
 .location {
@@ -324,15 +340,17 @@ address {
 }
 .location__place {
   padding: 15px 0 15px 0;
+  font-family: Roboto, sans-serif;
+  font-weight: 300;
+  font-weight: bold;
+  font-size: clamp(10px, 4vw, 30px);
 }
 .location__location {
-  font-weight: bold;
   padding-left: 10px;
-}
-@media (min-width: 992px) {
-  .location {
-    height: 20%;
-  }
+  font-family: Roboto, sans-serif;
+  font-weight: 300;
+  font-weight: bold;
+  font-size: clamp(10px, 4vw, 30px);
 }
 
 .intro-container {
@@ -341,11 +359,6 @@ address {
   flex-direction: column;
   justify-content: center;
   background-color: #f6f6f6;
-}
-@media (min-width: 992px) {
-  .intro-container {
-    height: 40%;
-  }
 }
 
 .intro {
@@ -360,12 +373,12 @@ address {
   width: 70%;
 }
 .intro__text {
-  padding: 0 10% 0 10%;
+  padding: 2% 10%;
 }
-@media (min-width: 992px) {
-  .intro__button {
-    display: none;
-  }
+.intro__button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .description {
@@ -390,8 +403,8 @@ address {
   justify-content: space-around;
 }
 .description__line {
-  display: flex;
   height: 25%;
+  display: flex;
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -412,10 +425,10 @@ address {
   justify-content: center;
   align-items: center;
   position: absolute;
-  font-size: clamp(14px, 4vw, 20px);
-  left: calc(clamp(14px, 4vw, 20px) * -1);
-  height: calc(clamp(14px, 4vw, 20px) * 2);
-  width: calc(clamp(14px, 4vw, 20px) * 2);
+  font-size: clamp(12px, 3vw, 20px);
+  left: calc(clamp(12px, 3vw, 20px) * -1);
+  height: calc(clamp(12px, 3vw, 20px) * 2);
+  width: calc(clamp(12px, 3vw, 20px) * 2);
   font-weight: bold;
 }
 .description__line-text {
@@ -425,38 +438,13 @@ address {
   position: absolute;
   left: 10%;
 }
-@media (min-width: 992px) {
-  .description {
-    background-color: #f6f6f6;
-    margin: 0;
-    height: 40%;
-    justify-content: center;
-    align-items: center;
-  }
-  .description__heading {
-    height: 30%;
-    width: 90%;
-  }
-  .description__list {
-    height: 70%;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 90%;
-  }
-  .description__line {
-    align-self: center;
-    width: 25%;
-    height: 80%;
-    background-color: white;
-  }
-}
 
 .restaurants {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100vw;
+  width: 100%;
   background-color: #f6f6f6;
 }
 .restaurants__heading {
@@ -465,7 +453,7 @@ address {
   justify-content: flex-end;
   height: 5vh;
   width: 90%;
-  margin-bottom: 5vh;
+  margin: 5vh;
 }
 .restaurants__list {
   width: 90%;
@@ -475,38 +463,6 @@ address {
 }
 .restaurants__line {
   margin-bottom: 2vh;
-}
-@media (min-width: 992px) {
-  .restaurants {
-    height: 50vh;
-  }
-  .restaurants__heading {
-    margin: 0;
-    height: 10%;
-  }
-  .restaurants__list {
-    margin: 0;
-    height: 80%;
-    display: grid;
-    grid-template-columns: repeat(4, 22%);
-    justify-content: space-between;
-    align-items: center;
-  }
-  .restaurants__line {
-    margin: 0;
-  }
-}
-@media (min-width: 992px) and (max-width: 1600px) {
-  .restaurants__list {
-    grid-template-columns: 40% 40%;
-    -moz-column-gap: 5%;
-         column-gap: 5%;
-    row-gap: 5%;
-    justify-content: center;
-    align-content: center;
-    max-width: 46%;
-    min-width: 724px;
-  }
 }
 
 .restaurant-card {
@@ -561,57 +517,70 @@ address {
 }
 .restaurant-card__like {
   position: absolute;
-  right: 5%;
+  right: 4%;
   bottom: 10%;
 }
 .restaurant-card__like i {
   font-size: 6vw;
 }
-@media (min-width: 992px) {
-  .restaurant-card {
-    border-radius: 20px;
+
+@media (min-width: 1024px) {
+  .hero {
+    height: auto;
   }
+
+  .intro {
+    padding: 2% 0;
+  }
+  .intro__heading {
+    padding: 2% 0;
+  }
+  .intro__button {
+    margin: 2%;
+  }
+
+  .description {
+    margin: 0;
+    padding-bottom: 4%;
+  }
+  .description__heading {
+    width: 90%;
+    align-self: center;
+    padding: 4% 0;
+  }
+  .description__list {
+    flex-direction: row;
+  }
+  .description__line {
+    width: 28%;
+    height: 80px;
+  }
+
+  .restaurants__heading {
+    margin: 0;
+    height: 15%;
+    padding: 4% 0;
+    justify-content: center;
+  }
+  .restaurants__list {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+  }
+  .restaurants__line {
+    padding: 4%;
+    margin: 0;
+  }
+
   .restaurant-card__img {
     border-radius: 20px 20px 0 0;
   }
+  .restaurant-card__like {
+    bottom: 8%;
+  }
   .restaurant-card__like i {
-    font-size: 1.5vw;
+    font-size: 3vw;
   }
 }
-
-@media (min-width: 992px) {
-  .menu-body {
-    background-image: url("/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
-  }
-}
-
-.menu-header {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  justify-content: center;
-  position: relative;
-  margin-top: 2vh;
-  height: 6vh;
-}
-.menu-header__link {
-  position: absolute;
-  text-decoration: none;
-  color: black;
-  left: 4%;
-}
-@media (min-width: 992px) {
-  .menu-header {
-    margin: 0;
-    height: 10vh;
-    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
-    background-color: #f6f6f6;
-  }
-  .menu-header__link i {
-    font-size: 30px;
-  }
-}
-
 .menu-intro {
   position: relative;
 }
@@ -634,7 +603,7 @@ address {
   font-size: clamp(20px, 7vw, 40px);
   padding-bottom: 10%;
 }
-@media (min-width: 992px) {
+@media (min-width: 1024px) {
   .menu-intro__title {
     font-size: 60px;
   }
@@ -658,36 +627,10 @@ address {
 .menu-intro__like i {
   font-size: clamp(10px, 7vw, 40px);
 }
-@media (min-width: 992px) {
-  .menu-intro {
-    margin-top: 10vh;
-    height: 15vh;
-    display: flex;
-    justify-content: center;
-  }
-  .menu-intro__img {
-    display: none;
-  }
-  .menu-intro__heading {
-    padding: 40px 4%;
-    width: 90%;
-    position: initial;
-    border-radius: 4vw 4vw 0 0;
-  }
-  .menu-intro__title {
-    padding: 0;
-  }
-  .menu-intro__like {
-    padding: 0;
-  }
-  .menu-intro__like i {
-    font-size: 60px;
-  }
-}
 
 .menu {
   background-color: #f6f6f6;
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -698,11 +641,11 @@ address {
   width: 90%;
   margin-bottom: 5%;
   font-family: Roboto, sans-serif;
+  font-weight: 300;
   text-transform: uppercase;
-  font-weight: 400;
   font-size: clamp(10px, 4vw, 30px);
 }
-@media (min-width: 992px) {
+@media (min-width: 1024px) {
   .menu__heading {
     font-size: clamp(20px, 1.8vw, 34px);
   }
@@ -710,7 +653,7 @@ address {
 .menu__heading:after {
   content: "";
   position: absolute;
-  border-bottom: 5px solid #99e2d0;
+  border-bottom: 2px solid #99e2d0;
   width: 5%;
   bottom: -30%;
   left: 0;
@@ -750,71 +693,12 @@ address {
 .menu__button {
   margin-bottom: 10%;
   font-family: Roboto, sans-serif;
+  font-weight: 300;
   font-size: clamp(10px, 4vw, 30px);
 }
-@media (min-width: 992px) {
+@media (min-width: 1024px) {
   .menu__button {
-    font-size: clamp(12px, 1.2vw, 26px);
-  }
-}
-@media (min-width: 992px) {
-  .menu {
-    justify-content: center;
-    background: transparent;
-    height: 55vh;
-  }
-  .menu__form {
-    background-color: #f6f6f6;
-    width: 90%;
-    height: 100%;
-    display: grid;
-    padding: 0 2% 0 2%;
-    grid-template-columns: 1fr 1fr 1fr;
-    -moz-column-gap: 2%;
-         column-gap: 2%;
-  }
-  .menu__form #entrees-title {
-    grid-column: 1;
-    grid-row: 1;
-  }
-  .menu__form #plats-title {
-    grid-column: 2;
-    grid-row: 1;
-  }
-  .menu__form #desserts-title {
-    grid-column: 3;
-    grid-row: 1;
-  }
-  .menu__form #entrees {
-    grid-column: 1;
-    grid-row: 2;
-  }
-  .menu__form #plats {
-    grid-column: 2;
-    grid-row: 2;
-  }
-  .menu__form #desserts {
-    grid-column: 3;
-    grid-row: 2;
-  }
-  .menu__heading {
-    margin: 0;
-  }
-  .menu__heading:after {
-    width: 100%;
-  }
-  .menu__list {
-    padding-top: 5%;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-  }
-  .menu__button {
-    grid-column: 2;
-    grid-row: 3;
-    margin: 6%;
-    justify-self: center;
-    font-size: 26px;
+    font-size: clamp(16px, 1.4vw, 26px);
   }
 }
 
@@ -856,10 +740,12 @@ address {
 }
 .dish-card__title {
   font-family: Roboto, sans-serif;
+  font-weight: 300;
+  font-weight: bold;
   font-size: clamp(12px, 5vw, 30px);
   padding-bottom: 3%;
 }
-@media (min-width: 992px) {
+@media (min-width: 1024px) {
   .dish-card__title {
     font-size: clamp(16px, 1.6vw, 32px);
   }
@@ -893,11 +779,115 @@ address {
   transition: transform 200ms;
 }
 .dish-card__box i {
-  font-size: 4vw;
+  font-size: 5vw;
   color: white;
   transition: transform 400ms;
 }
-@media (min-width: 992px) {
+
+@media (min-width: 1024px) {
+  .menu-body {
+    background-image: url("../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
+    display: grid;
+    grid-template-rows: 10% 85% 5%;
+  }
+
+  .menu-header {
+    margin: 0;
+    height: 100%;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+    background-color: #f6f6f6;
+    flex-direction: row;
+  }
+
+  .menu-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .menu-intro {
+    display: flex;
+    justify-content: center;
+  }
+  .menu-intro__img {
+    display: none;
+  }
+  .menu-intro__heading {
+    padding: 40px 4%;
+    width: 95%;
+    position: initial;
+    border-radius: 4vw 4vw 0 0;
+    margin-bottom: -1px;
+  }
+  .menu-intro__title {
+    padding: 0;
+  }
+  .menu-intro__like {
+    padding: 0;
+  }
+  .menu-intro__like i {
+    font-size: 60px;
+  }
+
+  .menu {
+    justify-content: center;
+    background: transparent;
+  }
+  .menu__form {
+    background-color: #f6f6f6;
+    width: 95%;
+    height: 100%;
+    display: grid;
+    padding: 0 2% 0 2%;
+    grid-template-columns: 1fr 1fr 1fr;
+    -moz-column-gap: 2%;
+         column-gap: 2%;
+  }
+  .menu__form #entrees-title {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .menu__form #plats-title {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .menu__form #desserts-title {
+    grid-column: 3;
+    grid-row: 1;
+  }
+  .menu__form #entrees {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .menu__form #plats {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  .menu__form #desserts {
+    grid-column: 3;
+    grid-row: 2;
+  }
+  .menu__heading {
+    margin: 0;
+  }
+  .menu__heading:after {
+    width: 100%;
+  }
+  .menu__list {
+    padding-top: 5%;
+    padding-bottom: 3%;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+  .menu__button {
+    grid-column: 2;
+    grid-row: 3;
+    justify-self: center;
+    font-size: 24px;
+    width: 200px;
+  }
+
   .dish-card:hover .dish-card__price {
     transform: translateX(0%);
   }
@@ -920,13 +910,5 @@ address {
   }
   .dish-card__box i {
     font-size: 2vw;
-  }
-}
-@media (min-width: 1600px) {
-  .dish-card {
-    max-height: 90px;
-  }
-  .dish-card__left-group {
-    padding: 5px 0 5px 15px;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,61 @@
+
+@media (min-width: 1024px){
+   
+    .hero{
+        height: auto;
+    }
+    .intro{
+        padding:2% 0;
+        &__heading{
+            padding: 2% 0;
+        }
+        &__button{
+            margin: 2%;
+        }
+
+    }
+    .description{
+        margin: 0;
+        padding-bottom: 4%;
+        &__heading{
+            width: 90%;
+            align-self: center;
+            padding: 4% 0;
+        }
+        &__list{
+            flex-direction: row;
+        }
+        &__line{
+            width: 28%;
+            height: 80px;
+        }
+    }
+    .restaurants{
+        &__heading{
+            margin: 0;
+            height: 15%;
+            padding: 4% 0;
+            justify-content: center;
+        }
+        &__list{
+            display: grid;
+            grid-template-columns: repeat(2, 50%);
+        }
+        &__line{
+            padding: 4%;
+            margin: 0;
+        }
+    
+    }
+    .restaurant-card{
+        &__img{
+            border-radius: 20px 20px 0 0;
+        }
+        &__like{
+            bottom:8%;
+            & i{
+                font-size: 3vw;
+            }
+        }
+    }
+}

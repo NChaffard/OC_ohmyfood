@@ -4,6 +4,8 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
+    user-select: none;
+
 }
 html{
     scroll-behavior: smooth;
@@ -11,8 +13,9 @@ html{
 }
 body{
     @include font();
-    user-select: none;
     width: 100vw;
+    max-width: 100%;
+    height: 100vh;
 }
 h1{
     @include brand-font();
@@ -29,6 +32,7 @@ a{
 label{
     z-index: 1;
     cursor: pointer;
+
 }
 address{
     font-style: normal;    
@@ -39,38 +43,71 @@ address{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 12vw;
-    max-height: 95px;
+    height: 10vw;
+    max-height: 80px;
     width: 50%;
     max-width: 382px;
     border: none;
     border-radius: 6vw;
     box-shadow: $shadow;
     color: white;
+    font-weight: 400;
+    font-size: 3.8vw;
     @include button-gradient;
     cursor: pointer;
     &:hover, &:active{
         box-shadow: $shadow-hover;
         filter: brightness(110%);
     }
-    @include breakpoint(desktop){
-        min-width: 200px;
-    } 
+@include breakpoint(desktop){
+    width:250px;
+    height: 70px;
+    font-size: 20px;
+} 
 }
 .card{
+    
     background-color: white;
     box-shadow: $shadow;
     border-radius: 4vw;
     &:hover, &:active{
         box-shadow: $shadow-hover;
     }
-    @include breakpoint(desktop){
-        border-radius: 20px;
-        min-height: 82px;
-    }   
-
+@include breakpoint(desktop){
+    border-radius: 20px;
+}   
 }
 
+// header
+.header{
+    position: relative;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    background-color: $bg-grey;
+    flex-direction: row;
+  
+    &__heading{
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+    &__link{
+        position: absolute;
+        left:5%;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: black;
+        height: 100%;
+    }
+
+@include breakpoint(desktop){
+    &__link i{
+        font-size: 30px;
+    }
+}
+}
 .footer{
     display: flex;
     flex-direction: column;
@@ -109,23 +146,23 @@ address{
         color: white;
     }
     // .footer desktop
-    @include breakpoint(desktop){
-        height: 10vh;
-        flex-direction: row;
-        &__heading{
-            display: none;
-        }
-        &__nav{
-            height: 100%;
-            margin: 0;
-            flex-direction: row;
-            justify-content: space-evenly;
-        }
-        &__line{
-            display: flex;
-            height: 100%;
-            white-space: nowrap;
-            align-items: center;
-        }
+@include breakpoint(desktop){
+    height: 10vh;
+    flex-direction: row;
+    &__heading{
+        display: none;
     }
+    &__nav{
+        height: 100%;
+        margin: 0;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    &__line{
+        display: flex;
+        height: 100%;
+        white-space: nowrap;
+        align-items: center;
+    }
+}
 }
