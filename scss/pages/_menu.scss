@@ -3,6 +3,8 @@
     position: relative;
     &__img{
         width: 100%;
+        max-height: 460px;
+
     }
     &__heading{
         display: flex;
@@ -18,6 +20,7 @@
         @include brand-font(menu-h2);
         padding-bottom: 10%;
     }
+
     &__checkbox{
         position: absolute;
         visibility: hidden;
@@ -28,6 +31,10 @@
     }
     &__like{
         padding-right: 5%;
+        &:hover{
+            @include hover;
+        }
+
     }
     &__like i{
         font-size: clamp(10px, 7vw, 40px);
@@ -133,8 +140,11 @@
 
     }
     &__title{
-        @include font(menu-h4);
+        @include font(dish-title);
         padding-bottom: 3%;
+    }
+    &__text{
+        @include font(dish);
     }
     &__price{
         display: flex;

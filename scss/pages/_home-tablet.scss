@@ -1,0 +1,28 @@
+
+@media (min-width:$tablet-min) and (max-width: $tablet-max){
+    .hero{
+        height: auto;
+    }
+    .intro{
+        padding: 4% 0;
+    }
+
+    .description{
+        &__heading{
+            padding-bottom: 4%;
+        }
+        &__line{
+            height: 80px;
+            margin-bottom: 4%;
+        }
+    }
+    .restaurant-card{
+        &__title{
+            @include font(restaurant-card-title);
+        }
+        &__location{
+            @include font(restaurant-card-location);
+        }
+
+    }
+}

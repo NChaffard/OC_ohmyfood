@@ -1,5 +1,5 @@
 
-@media (min-width: 1024px){
+@media (min-width: $desktop-min){
    
     .hero{
         height: auto;
@@ -51,6 +51,7 @@
         &__img{
             border-radius: 20px 20px 0 0;
         }
+        
         &__like{
             bottom:8%;
             & i{

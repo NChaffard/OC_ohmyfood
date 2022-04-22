@@ -1,11 +1,9 @@
 
-.home{
-    // animation: page-appear 1ms 2000ms both;
-}
+
 
 .loader-container{
     z-index: 2;
-    position: absolute;
+    position: fixed;
     height: 100%;
     width: 100%;
     animation: loader-disappear 1000ms 2000ms both;
@@ -14,13 +12,12 @@
     justify-content: center;
     align-items: center;
     &__loader{
-        position: fixed;
-        width: 120px;
-        height: 120px;
+        width: 100px;
+        height: 100px;
         border-radius: 50%;
-        border: transparent 10px solid;
-        border-top: $primaire 20px solid;
-        border-bottom: $secondaire 20px solid;
+        border: $bg-grey 10px solid;
+        border-top: $primaire 10px solid;
+        border-bottom: $secondaire 10px solid;
         animation: spin 3s linear infinite;
     }
 }
@@ -91,10 +88,10 @@
     &__list{
         display: flex;
         flex-direction: column;
-        height: 70%;
-        width: 90%;
         align-self: center;
         justify-content: space-around; 
+        height: 70%;
+        width: 90%;
     }
     &__line{
         height: 25%;
@@ -103,22 +100,22 @@
         justify-content: center;
         align-items: center;
         position: relative;
-        background-color: #f6f6f6;
+        background-color: $bg-grey;
         &:hover, &:active{
-            background-color: lighten($primaire,30%);
+            animation: description-hover 1000ms both;
             & i{
                 color: $primaire;
             }
         }
     }
     &__line-number{
-        background-color: $primaire;
-        color: white;
-        border-radius: 50%;
         display: flex;
         justify-content: center;
         align-items: center;
         position: absolute;
+        background-color: $primaire;
+        color: white;
+        border-radius: 50%;
         $list-number-size: clamp(12px,3vw,20px);
         $list-number-position: calc($list-number-size * -1);
         font-size: $list-number-size;
@@ -138,11 +135,10 @@
 
 .restaurants{
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     width: 100%;
-
     background-color: $bg-grey;
     &__heading{
         display: flex;
@@ -153,9 +149,9 @@
         margin: 5vh;
     }
     &__list{
-        width: 90%;
         display: flex;
         flex-direction: column;
+        width: 90%;
         margin-bottom: 10vh;
     }
     &__line{
@@ -209,8 +205,11 @@
         position: absolute;
         right: 4%;
         bottom: 10%;
+        &:hover{
+            @include hover;
+        }
     }
     &__like i{
-        font-size: 6vw;
+        font-size: min(6vw, 40px);
     }
 }

@@ -1,4 +1,34 @@
 // Keyframes
+    @keyframes card-hover{
+        from{
+            box-shadow: $shadow;
+        }
+        to{
+            box-shadow: $shadow-hover;
+
+        }
+    }
+
+    @keyframes button-hover{
+        from{
+            filter: brightness(100%);
+            box-shadow: $shadow;
+        }
+        to{
+            filter: brightness(110%);
+            box-shadow: $shadow-hover;
+
+        }
+    }
+    @keyframes description-hover{
+        from{
+            background-color: $bg-grey;
+        }
+        to{
+            background-color: lighten($primaire,30%);
+
+        }
+    }
     // Checkbox coeur
     @keyframes heart-fill {
         from {
@@ -18,18 +48,7 @@
         }
     }
 
-    // Apparition de la page
-    @keyframes page-appear{
-        from{
-            // opacity: 0%;
-            visibility: hidden;
-            
-        }
-        to{
-            // opacity: 100%;
-            visibility: visible;
-        }
-    }
+ 
     @keyframes loader-disappear{
         0%{
             opacity: 100%;

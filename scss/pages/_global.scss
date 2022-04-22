@@ -44,21 +44,20 @@ address{
     justify-content: center;
     align-items: center;
     height: 10vw;
-    max-height: 80px;
+    max-height: 70px;
     width: 50%;
-    max-width: 382px;
+    max-width: 300px;
     border: none;
     border-radius: 6vw;
     box-shadow: $shadow;
     color: white;
-    font-weight: 400;
-    font-size: 3.8vw;
+    @include font(button);
     @include button-gradient;
     cursor: pointer;
     &:hover, &:active{
-        box-shadow: $shadow-hover;
-        filter: brightness(110%);
+        animation: button-hover 600ms both;
     }
+// .button desktop
 @include breakpoint(desktop){
     width:250px;
     height: 70px;
@@ -71,8 +70,9 @@ address{
     box-shadow: $shadow;
     border-radius: 4vw;
     &:hover, &:active{
-        box-shadow: $shadow-hover;
+        animation: card-hover 600ms both;
     }
+// .card desktop
 @include breakpoint(desktop){
     border-radius: 20px;
 }   
@@ -99,9 +99,14 @@ address{
         align-items: center;
         text-decoration: none;
         color: black;
-        height: 100%;
+        height: 100%;      
+            & i:hover{
+               @include hover;
+            }
+        
     }
 
+// .header desktop
 @include breakpoint(desktop){
     &__link i{
         font-size: 30px;
@@ -144,11 +149,16 @@ address{
     }
     &__link{
         color: white;
+        &:hover{
+            font-weight: 500;
+        }
     }
-    // .footer desktop
+
+// .footer desktop
 @include breakpoint(desktop){
     height: 10vh;
     flex-direction: row;
+    justify-content: center;
     &__heading{
         display: none;
     }
