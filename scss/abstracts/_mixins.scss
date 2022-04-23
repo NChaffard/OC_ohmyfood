@@ -69,13 +69,13 @@
 
         @if $font-type == default{
             @include breakpoint(desktop){
-                font-size: 60px;
+                font-size: 50px;
             }
         }
         @if $font-type == menu-h2 {
-            font-size: clamp(20px, 7vw, 40px);
+            font-size: clamp(20px, 7vw, 50px);
             @include breakpoint(desktop){
-                font-size: 60px;
+                font-size: 50px;
             } 
         }
     }

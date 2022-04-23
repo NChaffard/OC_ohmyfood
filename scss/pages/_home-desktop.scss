@@ -50,12 +50,11 @@
     .restaurant-card{
         &__img{
             border-radius: 20px 20px 0 0;
-        }
-        
+        }       
         &__like{
             bottom:8%;
             & i{
-                font-size: 3vw;
+                font-size: min(50px, 3vw);
             }
         }
     }

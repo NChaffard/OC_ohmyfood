@@ -1,0 +1,16 @@
+
+@media (min-width:$tablet-min) and (max-width: $tablet-max){
+
+    .menu-header{
+        max-height: 100px;
+    }
+
+    .menu-intro{
+        &__heading{
+            bottom: -100px;
+        }
+    }
+    .menu{
+        margin-top: 100px;
+    }
+}
