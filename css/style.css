@@ -274,6 +274,9 @@ address {
   transition: transform 300ms;
 }
 @media (min-width: 1024px) {
+  .header {
+    min-height: 100px;
+  }
   .header__link i {
     font-size: 30px;
   }
@@ -889,73 +892,14 @@ address {
 }
 
 @media (min-width: 1024px) {
-  #menu__1 {
-    background-image: url("../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
-  }
-  #menu__2 {
-    background-image: url("../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg");
-  }
-  #menu__3 {
-    background-image: url("../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
-  }
-  #menu__4 {
-    background-image: url("../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
-  }
-
   .menu-body {
-    display: grid;
-    grid-template-rows: 10% 85% 5%;
+    height: auto;
   }
 
-  .menu-header {
-    margin: 0;
-    height: 100%;
-    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
-    background-color: #f6f6f6;
-    flex-direction: row;
-  }
-
-  .menu-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-  }
-
-  .menu-intro {
-    display: flex;
-    justify-content: center;
-  }
-  .menu-intro__img {
-    display: none;
-  }
-  .menu-intro__heading {
-    padding: 40px 4%;
-    width: 95%;
-    position: initial;
-    border-radius: 4vw 4vw 0 0;
-    margin-bottom: -1px;
-  }
-  .menu-intro__title {
-    padding: 0;
-  }
-  .menu-intro__like {
-    padding: 0;
-  }
-  .menu-intro__like i {
-    font-size: 60px;
-  }
-
-  .menu {
-    justify-content: center;
-    background: transparent;
-  }
   .menu__form {
-    background-color: #f6f6f6;
-    width: 95%;
-    height: 100%;
     display: grid;
-    padding: 0 2% 0 2%;
     grid-template-columns: 1fr 1fr 1fr;
+    background-color: aqua;
     -moz-column-gap: 2%;
          column-gap: 2%;
   }
@@ -983,48 +927,10 @@ address {
     grid-column: 3;
     grid-row: 2;
   }
-  .menu__heading {
-    margin: 0;
-  }
-  .menu__heading:after {
-    width: 100%;
-  }
   .menu__list {
-    padding-top: 5%;
-    padding-bottom: 3%;
+    display: grid;
     width: 100%;
-    height: 100%;
-    margin: 0;
-  }
-  .menu__button {
-    grid-column: 2;
-    grid-row: 3;
-    justify-self: center;
-    font-size: 24px;
-    width: 200px;
-  }
-
-  .dish-card:hover .dish-card__price {
-    transform: translateX(0%);
-  }
-  .dish-card:hover .dish-card__box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform: translateX(0%);
-  }
-  .dish-card:hover .dish-card__box i {
-    transform: rotate(360deg);
-  }
-  .dish-card:hover .dish-card__text, .dish-card:hover .dish-card__title {
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .dish-card__box {
-    border-radius: 0 20px 20px 0;
-    max-width: 16%;
-  }
-  .dish-card__box i {
-    font-size: 2vw;
+    background-color: green;
+    grid-template-rows: repeat(4, 20%);
   }
 }/*# sourceMappingURL=style.css.map */

@@ -108,6 +108,7 @@ address{
 
 // .header desktop
 @include breakpoint(desktop){
+    min-height: 100px;
     &__link i{
         font-size: 30px;
     }
