@@ -1,4 +1,5 @@
 // Keyframes
+    // survol carte
     @keyframes card-hover{
         from{
             box-shadow: $shadow;
@@ -8,7 +9,7 @@
 
         }
     }
-
+    // survol bouton
     @keyframes button-hover{
         from{
             filter: brightness(100%);
@@ -20,6 +21,7 @@
 
         }
     }
+    //  Survol cartes description
     @keyframes description-hover{
         from{
             background-color: $bg-grey;
@@ -51,7 +53,7 @@
         }
     }
 
- 
+    // Loader
     @keyframes loader-disappear{
         0%{
             opacity: 100%;
@@ -62,6 +64,7 @@
             visibility: hidden;
         }
     }
+    // spin du loader
     @keyframes spin{
         from{
             transform: rotate(0deg);

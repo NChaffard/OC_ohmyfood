@@ -1,5 +1,4 @@
-
-
+// Home
 
 .loader-container{
     z-index: 2;
@@ -22,11 +21,10 @@
     }
 }
 
-// Mise en place hauteur hero
 .hero{
     height: 90vh;
 }
-// location
+
 .location{
     height: 6%;
     @include bg-location-gradient();
@@ -72,7 +70,6 @@
     }   
 }
 
-// description
 .description{
     margin-left: 5%;
     margin-top: 5%;
@@ -208,9 +205,7 @@
         &:hover{
             & i{
                 @include icon-gradient();
-
             }
-
         }
     }
     &__like i{
