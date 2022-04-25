@@ -206,7 +206,11 @@
         right: 4%;
         bottom: 10%;
         &:hover{
-            @include hover;
+            & i{
+                @include icon-gradient();
+
+            }
+
         }
     }
     &__like i{

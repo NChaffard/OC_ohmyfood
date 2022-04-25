@@ -121,11 +121,10 @@ address{
     align-items: center;
     width: 100%;
     &__heading{
-        @include brand-font();
+        @include brand-font(footer-h2);
         color: white;
         display: flex;
         align-items: center;
-        font-size: 4.5vw;
         height: 15vw;
         width: 90%;
     }
@@ -158,16 +157,22 @@ address{
 // .footer desktop
 @include breakpoint(desktop){
     height: 10vh;
+    min-height: 100px;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     &__heading{
-        display: none;
+        height: 100%;
+        width: 15%;
+        margin: 0;
+        padding: 0 2%;
     }
     &__nav{
         height: 100%;
+        width: 85%;
         margin: 0;
         flex-direction: row;
-        justify-content: space-evenly;
+        padding: 0 2%;
+        justify-content: space-around;
     }
     &__line{
         display: flex;

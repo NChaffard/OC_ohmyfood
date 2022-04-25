@@ -32,9 +32,12 @@
     // Checkbox coeur
     @keyframes heart-fill {
         from {
-            transform: scale(0);}
-        to { font-weight: 600;
-            transform: scale(1);}
+            transform: scale(0);
+            }
+        to { 
+            font-weight: 600;
+            transform: scale(1);
+            }
     }
     // Apparition de ligne
     @keyframes line-appear{

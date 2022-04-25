@@ -33,7 +33,10 @@
     &__like{
         padding-right: 5%;
         &:hover{
-            @include hover;
+            & i{
+                @include icon-gradient();
+            }
+
         }
 
     }
@@ -58,7 +61,7 @@
             content: '';
             position: absolute;
             border-bottom: 2px solid $tertiaire;
-            width: 5%;
+            width: 10%;
             bottom: -30%;
             left: 0;
         }

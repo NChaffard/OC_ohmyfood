@@ -76,7 +76,14 @@
             font-size: clamp(20px, 7vw, 50px);
             @include breakpoint(desktop){
                 font-size: 50px;
+            }
+        }
+        @if $font-type == footer-h2 {
+            font-size: 4.5vw;
+            @include breakpoint(desktop){
+                font-size: clamp(20px,2.5vw,50px);
             } 
+    
         }
     }
 

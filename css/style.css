@@ -292,16 +292,16 @@ address {
 .footer__heading {
   font-family: Shrikhand, sans-serif;
   font-weight: 200;
+  font-size: 4.5vw;
   color: white;
   display: flex;
   align-items: center;
-  font-size: 4.5vw;
   height: 15vw;
   width: 90%;
 }
 @media (min-width: 1024px) {
   .footer__heading {
-    font-size: 50px;
+    font-size: clamp(20px, 2.5vw, 50px);
   }
 }
 .footer__nav {
@@ -332,17 +332,23 @@ address {
 @media (min-width: 1024px) {
   .footer {
     height: 10vh;
+    min-height: 100px;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
   }
   .footer__heading {
-    display: none;
+    height: 100%;
+    width: 15%;
+    margin: 0;
+    padding: 0 2%;
   }
   .footer__nav {
     height: 100%;
+    width: 85%;
     margin: 0;
     flex-direction: row;
-    justify-content: space-evenly;
+    padding: 0 2%;
+    justify-content: space-around;
   }
   .footer__line {
     display: flex;
@@ -570,9 +576,14 @@ address {
   right: 4%;
   bottom: 10%;
 }
-.restaurant-card__like:hover {
-  transform: scale(1.2);
-  transition: transform 300ms;
+.restaurant-card__like:hover i {
+  background: rgb(255, 121, 218);
+  background: linear-gradient(172deg, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 90%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: heart-fill 100ms both;
+          animation: heart-fill 100ms both;
 }
 .restaurant-card__like i {
   font-size: min(6vw, 40px);
@@ -720,9 +731,14 @@ address {
 .menu-intro__like {
   padding-right: 5%;
 }
-.menu-intro__like:hover {
-  transform: scale(1.2);
-  transition: transform 300ms;
+.menu-intro__like:hover i {
+  background: rgb(255, 121, 218);
+  background: linear-gradient(172deg, rgb(147, 86, 220) 0%, rgb(255, 121, 218) 90%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: heart-fill 100ms both;
+          animation: heart-fill 100ms both;
 }
 .menu-intro__like i {
   font-size: clamp(10px, 7vw, 40px);
@@ -754,7 +770,7 @@ address {
   content: "";
   position: absolute;
   border-bottom: 2px solid #99e2d0;
-  width: 5%;
+  width: 10%;
   bottom: -30%;
   left: 0;
 }
