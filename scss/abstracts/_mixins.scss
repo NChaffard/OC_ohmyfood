@@ -89,7 +89,6 @@
             @include breakpoint(desktop){
                 font-size: clamp(20px,2.5vw,50px);
             } 
-    
         }
     }
 
@@ -102,21 +101,18 @@
         background: rgb(255,121,218);
         background: linear-gradient(172deg, rgba(255,121,218,1) 0%, rgba(147,86,220,1) 90%);     
     }
-    @mixin icon-gradient{
-            background: rgb(255,121,218);
-            background: linear-gradient(172deg, rgba(147,86,220,1) 0%, rgba(255,121,218,1) 90%);
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: heart-fill 100ms both;
-        }
+
    
-    // Hover
-    @mixin hover{
-        transform: scale(1.2);
+    // Link scale
+    @mixin link-scale{
         transition: transform 300ms;
     }
-    
 
+    // translation checkbox
+    @mixin translation-checkbox{
+        transition: transform cubic-bezier(0.900, 0.255, 0.505, 0.935) 300ms;
+    }
+    
 
 // Breakpoints
 @mixin breakpoint($point) {

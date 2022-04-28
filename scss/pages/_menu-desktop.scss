@@ -123,7 +123,6 @@
             justify-self: center;
             font-size: 24px;
             width: 200px;
-            
         }    
     }
     .menu-footer{
@@ -133,14 +132,14 @@
         &:hover{
             & .dish-card__price{
                 transform: translateX(0%);
+                @include translation-checkbox;
             }
             & .dish-card__box{
-                display: flex;
-                justify-content: center;
-                align-items: center;
                 transform: translateX(0%);
+                @include translation-checkbox;
                 & i{
                     transform: rotate(360deg);
+                    transition: transform 600ms;
                 }
             }
             .dish-card__text, .dish-card__title{
@@ -154,6 +153,7 @@
         }
         &__box i{
             font-size: 2vw;
+            transform: rotate(0deg);
         }
         }
 }

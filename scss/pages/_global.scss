@@ -54,8 +54,14 @@ address{
     @include font(button);
     @include button-gradient;
     cursor: pointer;
+    filter: brightness(100%);
+    box-shadow: $shadow;
+    transition: all  300ms;
+
     &:hover, &:active{
-        animation: button-hover 600ms both;
+        filter: brightness(110%);
+        box-shadow: $shadow-hover;
+        transition: all 300ms;
     }
 // .button desktop
 @include breakpoint(desktop){
@@ -65,12 +71,14 @@ address{
 } 
 }
 .card{
-    
     background-color: white;
     box-shadow: $shadow;
+    transition: all 300ms;
+
     border-radius: 4vw;
     &:hover, &:active{
-        animation: card-hover 600ms both;
+        box-shadow: $shadow-hover;
+        transition: all 300ms;
     }
 // .card desktop
 @include breakpoint(desktop){
@@ -99,9 +107,12 @@ address{
         align-items: center;
         text-decoration: none;
         color: black;
+        transform: scale(1);
+        @include link-scale;
         height: 100%;      
             & i:hover{
-               @include hover;
+                transform: scale(1.2);
+                @include link-scale;
             }
         
     }

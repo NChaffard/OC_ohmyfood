@@ -1,42 +1,17 @@
 // Keyframes
-    // survol carte
-    @keyframes card-hover{
-        from{
-            box-shadow: $shadow;
-        }
-        to{
-            box-shadow: $shadow-hover;
-
-        }
-    }
-    // survol bouton
-    @keyframes button-hover{
-        from{
-            filter: brightness(100%);
-            box-shadow: $shadow;
-        }
-        to{
-            filter: brightness(110%);
-            box-shadow: $shadow-hover;
-
-        }
-    }
-    //  Survol cartes description
-    @keyframes description-hover{
-        from{
-            background-color: $bg-grey;
-        }
-        to{
-            background-color: lighten($primaire,30%);
-
-        }
-    }
     // Checkbox coeur
     @keyframes heart-fill {
-        from {
+        0%{
+            transform: scale(1);
+        }
+        50% {
             transform: scale(0);
             }
-        to { 
+        100% { 
+            background: rgb(255,121,218);
+            background: linear-gradient(172deg, rgba(147,86,220,1) 0%, rgba(255,121,218,1) 90%);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
             font-weight: 600;
             transform: scale(1);
             }
@@ -51,6 +26,25 @@
             opacity: 100%;
             transform: translateY(0%);
         }
+    }
+    // Apparition checkbox menu
+    @keyframes box-appear{
+        0%{
+            transform: translatex(100%);
+        }
+        100%{
+            transform: translateX(0%);
+        }
+    }
+    // Rotation check
+    @keyframes check-rotate{
+        0%{
+            transform: rotate(0deg);
+        }
+        100%{
+            transform: rotate(360deg);
+        }
+      
     }
 
     // Loader

@@ -98,10 +98,18 @@
         align-items: center;
         position: relative;
         background-color: $bg-grey;
+        transition: all 1000ms;
+        & i{
+            transition: color 1000ms;
+        }
         &:hover, &:active{
-            animation: description-hover 1000ms both;
+            background-color: lighten($primaire,30%);
+            transition: all 1000ms ;
+
             & i{
                 color: $primaire;
+                transition: color 1000ms ;
+
             }
         }
     }
@@ -195,7 +203,7 @@
         position: absolute;
         visibility: hidden;
         &:checked + .restaurant-card__like i{
-            @include icon-gradient();
+            animation: heart-fill 300ms forwards;
         }
     }
     &__like{
@@ -204,7 +212,7 @@
         bottom: 10%;
         &:hover{
             & i{
-                @include icon-gradient();
+                animation: heart-fill 300ms forwards;
             }
         }
     }
